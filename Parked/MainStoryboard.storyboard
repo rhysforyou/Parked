@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Igx-Wi-B3S">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="48K-LB-nvI">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o5E-ww-bJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="Igx-Wi-B3S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="svM-Gv-AkQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ugz-H3-sLH" kind="relationship" relationship="rootViewController" id="ThY-hB-1Mi"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-82" y="79"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="CnG-PR-dDf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njR-64-PAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ugz-H3-sLH" customClass="PKDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Fh-R5-131">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="xyd-Yf-NzE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Getting Location…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DSE-bB-sp3">
+                                <rect key="frame" x="20" y="168" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="83z-wc-Jp1"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="DSE-bB-sp3" id="LgX-TO-Wkq"/>
+                        <outlet property="mapView" destination="xyd-Yf-NzE" id="n60-3K-Vnz"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="460" y="79"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="PKDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
