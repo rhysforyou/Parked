@@ -23,16 +23,15 @@
         _coordinate.longitude = parkingDetails.location.coordinate.longitude;
         _title = @"Getting address";
         
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation:[[CLLocation alloc] 
-                                          initWithLatitude:self.coordinate.latitude 
-                                          longitude:self.coordinate.longitude] 
-                       completionHandler:^(NSArray* placemarks, NSError* error) {
-           if ([placemarks count] > 0) {
-               [self setValue:[[placemarks objectAtIndex:0] name] forKey:@"title"];
-           } else {
-               [self setValue:@"Unable to determine address" forKey:@"title"];
-           }
+        [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude] completionHandler:^(NSArray* placemarks, NSError* error) {
+            if ([placemarks count] > 0) {
+                [self setValue:[[placemarks objectAtIndex:0] name] forKey:@"title"];
+            } else {
+                [self setValue:@"Unable to determine address" forKey:@"title"];
+            }
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         }];
     }    
     return self;
