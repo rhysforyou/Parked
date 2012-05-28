@@ -22,6 +22,7 @@
 @synthesize mapView = _mapView;
 @synthesize locationLabel = _locationLabel;
 @synthesize parkingDetails = _parkingDetails;
+@synthesize noteTextView = _noteTextView;
 @synthesize geocoder = _geocoder;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -45,6 +46,7 @@
     self.annotation = [[PKAnnotation alloc] initWithParkingDetails:self.parkingDetails];
     [self.mapView addAnnotation:self.annotation];
     [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+    [self.noteTextView setText:self.parkingDetails.notes];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -64,6 +66,7 @@
 
 - (void)viewDidUnload
 {
+    [self setNoteTextView:nil];
     [super viewDidUnload];
     [self setLocationLabel:nil];
     [self setMapView:nil];

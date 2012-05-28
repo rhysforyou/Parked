@@ -12,5 +12,6 @@
 @interface PKParkingDetails : NSObject
 
 @property (strong, nonatomic) CLLocation *location;
+@property (strong, nonatomic) NSString *notes;
 
 @end
