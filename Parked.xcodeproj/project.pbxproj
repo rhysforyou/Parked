@@ -24,6 +24,8 @@
 		5713820315737A6100CA5555 /* PKParkingDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5713820215737A6100CA5555 /* PKParkingDetails.m */; };
 		5713820515737A8200CA5555 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5713820415737A8200CA5555 /* CoreLocation.framework */; };
 		57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57166C9A15739BAC00A8681E /* PKAnnotation.m */; };
+		57166CA71573AFAF00A8681E /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA51573AFAF00A8681E /* map-pin.png */; };
+		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		5713820415737A8200CA5555 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		57166C9915739BAC00A8681E /* PKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKAnnotation.h; sourceTree = "<group>"; };
 		57166C9A15739BAC00A8681E /* PKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAnnotation.m; sourceTree = "<group>"; };
+		57166CA51573AFAF00A8681E /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
+		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,7 @@
 		571381CB1573745800CA5555 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57166CA01573AF8C00A8681E /* Images */,
 				571381CC1573745800CA5555 /* Parked-Info.plist */,
 				571381CD1573745800CA5555 /* InfoPlist.strings */,
 				571381D01573745800CA5555 /* main.m */,
@@ -167,6 +172,15 @@
 				571381E51573745800CA5555 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57166CA01573AF8C00A8681E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				57166CA51573AFAF00A8681E /* map-pin.png */,
+				57166CA61573AFAF00A8681E /* map-pin@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +256,8 @@
 			files = (
 				571381CF1573745800CA5555 /* InfoPlist.strings in Resources */,
 				571381F41573747300CA5555 /* MainStoryboard.storyboard in Resources */,
+				57166CA71573AFAF00A8681E /* map-pin.png in Resources */,
+				57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

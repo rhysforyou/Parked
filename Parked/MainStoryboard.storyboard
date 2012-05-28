@@ -35,12 +35,16 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Getting Location…" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DSE-bB-sp3">
-                                <rect key="frame" x="20" y="168" width="280" height="21"/>
+                                <rect key="frame" x="39" y="168" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="map-pin.png" id="r20-d0-3sk">
+                                <rect key="frame" x="20" y="169" width="11" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -54,6 +58,9 @@
             <point key="canvasLocation" x="460" y="79"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map-pin.png" width="16" height="16"/>
+    </resources>
     <classes>
         <class className="PKDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDetailViewController.h"/>
