@@ -19,6 +19,9 @@
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated;
 - (void)setTimerWithInterval:(NSTimeInterval)interval;
 - (void)updateTimer;
+- (void)didEnterBackground;
+- (void)didBecomeActive;
+- (void)beginTimer;
 
 @end
 
@@ -38,6 +41,16 @@
 {
     [super viewDidLoad];
 	self.geocoder = [[CLGeocoder alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didEnterBackground) 
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(didBecomeActive) 
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,8 +66,7 @@
     // Center map on current location
     [self.mapView setCenterCoordinate:[self.parkingDetails.location coordinate]];
     
-    // Start the countdown timer
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateTimer) userInfo:NULL repeats:YES];
+    [self beginTimer];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -81,6 +93,16 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)didEnterBackground
+{
+    [self.timer invalidate];
+}
+
+- (void)didBecomeActive
+{
+    [self beginTimer];
 }
 
 #pragma mark - Utility Methods
@@ -112,6 +134,17 @@
     NSTimeInterval delta = [[NSDate date] timeIntervalSinceDate:self.parkingDetails.startTime];
     NSTimeInterval remainingTime = self.parkingDetails.timeInterval - delta;
     [self setTimerWithInterval:remainingTime];
+}
+
+- (void)beginTimer
+{
+    if (![self.timer isValid]) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                      target:self
+                                                    selector:@selector(updateTimer)
+                                                    userInfo:NULL
+                                                     repeats:YES];
+    }
 }
 
 #pragma mark - Key-Value Observing
