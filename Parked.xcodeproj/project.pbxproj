@@ -28,6 +28,7 @@
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
 		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
 		5791609A15748BE7008230B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609915748BE7008230B4 /* icon@2x.png */; };
+		579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579160A01574CD23008230B4 /* PKNewParkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
 		5791609715748BDE008230B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		5791609915748BE7008230B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
+		5791609F1574CD23008230B4 /* PKNewParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNewParkViewController.h; sourceTree = "<group>"; };
+		579160A01574CD23008230B4 /* PKNewParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNewParkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 				5713820215737A6100CA5555 /* PKParkingDetails.m */,
 				57166C9915739BAC00A8681E /* PKAnnotation.h */,
 				57166C9A15739BAC00A8681E /* PKAnnotation.m */,
+				5791609F1574CD23008230B4 /* PKNewParkViewController.h */,
+				579160A01574CD23008230B4 /* PKNewParkViewController.m */,
 			);
 			path = Parked;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				571381F71573755800CA5555 /* PKDetailViewController.m in Sources */,
 				5713820315737A6100CA5555 /* PKParkingDetails.m in Sources */,
 				57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */,
+				579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

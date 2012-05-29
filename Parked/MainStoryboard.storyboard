@@ -15,11 +15,69 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ugz-H3-sLH" kind="relationship" relationship="rootViewController" id="ThY-hB-1Mi"/>
+                        <segue destination="zdL-39-wKU" kind="relationship" relationship="rootViewController" id="Reg-yN-Bfy"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="-82" y="79"/>
+        </scene>
+        <!--New Park View Controller - New Park-->
+        <scene sceneID="vQ7-jU-giQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXa-P8-8xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="zdL-39-wKU" customClass="PKNewParkViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="wcK-kP-nJc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="lJq-2w-N9n">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ye8-mj-GVn">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="mqF-nD-mXo">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="O8J-jz-R0v">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="zdL-39-wKU" id="L1A-kM-7XC"/>
+                            <outlet property="delegate" destination="zdL-39-wKU" id="d4e-t7-fOp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="New Park" id="Wdv-Fn-Z6K">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="1TR-Mg-w0K">
+                            <connections>
+                                <segue destination="ugz-H3-sLH" kind="push" identifier="pushParkingDetails" id="bth-zw-sZh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="420" y="79"/>
         </scene>
         <!--Detail View Controller - Parking Details-->
         <scene sceneID="CnG-PR-dDf">
@@ -72,12 +130,26 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="460" y="79"/>
+            <point key="canvasLocation" x="928" y="79"/>
         </scene>
     </scenes>
     <resources>
         <image name="map-pin.png" width="11" height="19"/>
     </resources>
+    <classes>
+        <class className="PKDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PKNewParkViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -7,7 +7,7 @@
 //
 
 #import "PKAppDelegate.h"
-#import "PKDetailViewController.h"
+#import "PKNewParkViewController.h"
 #import "PKParkingDetails.h"
 
 @implementation PKAppDelegate
@@ -16,7 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    PKDetailViewController *detailVC = (PKDetailViewController *)[(UINavigationController *)self.window.rootViewController topViewController];
+    PKNewParkViewController *detailVC = (PKNewParkViewController *)[(UINavigationController *)self.window.rootViewController topViewController];
     detailVC.parkingDetails = [[PKParkingDetails alloc] init];
     return YES;
 }
