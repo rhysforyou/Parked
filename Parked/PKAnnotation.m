@@ -25,7 +25,8 @@
         
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation:[[CLLocation alloc] initWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude] completionHandler:^(NSArray* placemarks, NSError* error) {
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
+        [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error) {
             if ([placemarks count] > 0) {
                 [self setValue:[[placemarks objectAtIndex:0] name] forKey:@"title"];
             } else {

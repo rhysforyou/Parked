@@ -94,8 +94,12 @@
 {
     int minutes = interval / 60;
     int seconds = (int)interval % 60;
-    self.timerView.text = [NSString stringWithFormat:@"%2d:%.2d", 
-                           minutes, seconds];
+    if (minutes <= 0 && seconds <= 0) {
+        self.timerView.text = @"00:00";
+    } else {
+        self.timerView.text = [NSString stringWithFormat:@"%.2d:%.2d", 
+                               minutes, seconds];
+    }
 }
 
 - (void)updateTimer
