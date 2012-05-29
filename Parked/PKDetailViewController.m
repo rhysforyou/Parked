@@ -15,6 +15,7 @@
 @property (strong, nonatomic) PKAnnotation *annotation;
 
 - (void)centerMapOnLocation:(CLLocation *)location;
+- (void)setTimerWithInterval:(NSTimeInterval)interval;
 @end
 
 @implementation PKDetailViewController
@@ -23,6 +24,7 @@
 @synthesize locationLabel = _locationLabel;
 @synthesize parkingDetails = _parkingDetails;
 @synthesize noteTextView = _noteTextView;
+@synthesize timerView = _timerView;
 @synthesize geocoder = _geocoder;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,6 +49,7 @@
     [self.mapView addAnnotation:self.annotation];
     [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     [self.noteTextView setText:self.parkingDetails.notes];
+    [self setTimerWithInterval:self.parkingDetails.timeInterval];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -64,9 +67,17 @@
     [self.mapView setRegion:coordinateRegion animated:YES];
 }
 
+- (void)setTimerWithInterval:(NSTimeInterval)interval
+{
+    int minutes = interval / 60;
+    int seconds = (int)interval % 60;
+    self.timerView.text = [NSString stringWithFormat:@"%2d:%.2d", minutes, seconds];
+}
+
 - (void)viewDidUnload
 {
     [self setNoteTextView:nil];
+    [self setTimerView:nil];
     [super viewDidUnload];
     [self setLocationLabel:nil];
     [self setMapView:nil];

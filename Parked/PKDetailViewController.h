@@ -16,7 +16,8 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;
-@property (strong, nonatomic) PKParkingDetails *parkingDetails;
 @property (strong, nonatomic) IBOutlet UITextView *noteTextView;
+@property (strong, nonatomic) IBOutlet UILabel *timerView;
+@property (strong, nonatomic) PKParkingDetails *parkingDetails;
 
 @end

@@ -68,6 +68,7 @@
                         <outlet property="locationLabel" destination="DSE-bB-sp3" id="LgX-TO-Wkq"/>
                         <outlet property="mapView" destination="xyd-Yf-NzE" id="n60-3K-Vnz"/>
                         <outlet property="noteTextView" destination="H3f-c4-sk0" id="zu3-BD-2Jp"/>
+                        <outlet property="timerView" destination="CCI-ey-3xO" id="JoB-Ua-Mw6"/>
                     </connections>
                 </viewController>
             </objects>
@@ -84,6 +85,7 @@
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
