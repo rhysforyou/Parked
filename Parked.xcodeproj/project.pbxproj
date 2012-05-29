@@ -26,6 +26,8 @@
 		57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57166C9A15739BAC00A8681E /* PKAnnotation.m */; };
 		57166CA71573AFAF00A8681E /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA51573AFAF00A8681E /* map-pin.png */; };
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
+		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
+		5791609A15748BE7008230B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609915748BE7008230B4 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		57166C9A15739BAC00A8681E /* PKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAnnotation.m; sourceTree = "<group>"; };
 		57166CA51573AFAF00A8681E /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
 		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
+		5791609715748BDE008230B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		5791609915748BE7008230B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 		57166CA01573AF8C00A8681E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5791609715748BDE008230B4 /* icon.png */,
+				5791609915748BE7008230B4 /* icon@2x.png */,
 				57166CA51573AFAF00A8681E /* map-pin.png */,
 				57166CA61573AFAF00A8681E /* map-pin@2x.png */,
 			);
@@ -258,6 +264,8 @@
 				571381F41573747300CA5555 /* MainStoryboard.storyboard in Resources */,
 				57166CA71573AFAF00A8681E /* map-pin.png in Resources */,
 				57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */,
+				5791609815748BDE008230B4 /* icon.png in Resources */,
+				5791609A15748BE7008230B4 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
