@@ -13,6 +13,7 @@
 @synthesize location = _location;
 @synthesize notes = _notes;
 @synthesize timeInterval = _timeInterval;
+@synthesize startTime = _startTime;
 
 - (id)init
 {
@@ -23,6 +24,7 @@
         self.location = [[CLLocation alloc] initWithLatitude:-33.86867 longitude:151.207044];
         self.notes = @"On level 5 of parking garage";
         self.timeInterval = 900;
+        self.startTime = [NSDate date];
     }
     
     return self;

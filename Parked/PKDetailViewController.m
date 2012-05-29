@@ -14,9 +14,11 @@
 
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) PKAnnotation *annotation;
+@property (strong, nonatomic) NSTimer *timer;
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated;
 - (void)setTimerWithInterval:(NSTimeInterval)interval;
+- (void)updateTimer;
 
 @end
 
@@ -28,6 +30,7 @@
 @synthesize noteTextView = _noteTextView;
 @synthesize timerView = _timerView;
 @synthesize geocoder = _geocoder;
+@synthesize timer;
 
 #pragma mark - View Lifecycle
 
@@ -49,6 +52,9 @@
     
     // Center map on current location
     [self.mapView setCenterCoordinate:[self.parkingDetails.location coordinate]];
+    
+    // Start the countdown timer
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateTimer) userInfo:NULL repeats:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,6 +96,13 @@
     int seconds = (int)interval % 60;
     self.timerView.text = [NSString stringWithFormat:@"%2d:%.2d", 
                            minutes, seconds];
+}
+
+- (void)updateTimer
+{
+    NSTimeInterval delta = [[NSDate date] timeIntervalSinceDate:self.parkingDetails.startTime];
+    NSTimeInterval remainingTime = self.parkingDetails.timeInterval - delta;
+    [self setTimerWithInterval:remainingTime];
 }
 
 #pragma mark - Key-Value Observing

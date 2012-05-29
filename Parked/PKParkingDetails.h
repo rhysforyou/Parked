@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *notes;
+@property (strong, nonatomic) NSDate *startTime;
 @property (nonatomic) NSTimeInterval timeInterval;
 
 @end
