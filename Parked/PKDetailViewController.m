@@ -61,6 +61,11 @@
 {
     // Animated zoom
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"Oh no, your parking ran out";
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.parkingDetails.timeInterval];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 - (void)viewDidUnload
