@@ -22,6 +22,7 @@
 - (void)didEnterBackground;
 - (void)didBecomeActive;
 - (void)beginTimer;
+- (void)postLocalNotification;
 
 @end
 
@@ -74,10 +75,7 @@
     // Animated zoom
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = @"Oh no, your parking ran out";
-    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.parkingDetails.timeInterval];
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    [self postLocalNotification];
 }
 
 - (void)viewDidUnload
@@ -145,6 +143,15 @@
                                                     userInfo:NULL
                                                      repeats:YES];
     }
+}
+
+- (void)postLocalNotification
+{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.alertBody = @"Oh no, your parking ran out";
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.parkingDetails.timeInterval];
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 #pragma mark - Key-Value Observing
