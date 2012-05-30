@@ -81,7 +81,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="zdL-39-wKU" id="gXp-tx-2P5"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -315,24 +317,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="map-pin.png" width="11" height="19"/>
     </resources>
-    <classes>
-        <class className="PKDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PKNewParkViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="notesViw" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

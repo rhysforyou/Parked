@@ -41,6 +41,7 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 - (void)viewDidUnload
@@ -76,9 +77,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"pushParkingDetails"]) {
+        [self.notesViw resignFirstResponder];
         self.parkingDetails.notes = self.notesViw.text;
         PKDetailViewController *detailVC = (PKDetailViewController *)[segue destinationViewController];
         detailVC.parkingDetails = self.parkingDetails;
+        
     }
 }
 
