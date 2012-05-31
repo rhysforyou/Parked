@@ -62,7 +62,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="NFF-L5-S2m" kind="push" id="ewr-o7-A4U"/>
+                                            <segue destination="NFF-L5-S2m" kind="push" identifier="showDurationPicker" id="ewr-o7-A4U"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -163,13 +163,13 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="928" y="79"/>
+            <point key="canvasLocation" x="976" y="79"/>
         </scene>
-        <!--Table View Controller - Duration-->
+        <!--Duration Picker View Controller - Duration-->
         <scene sceneID="D42-5n-6CP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkW-Vt-72C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="NFF-L5-S2m" sceneMemberID="viewController">
+                <tableViewController id="NFF-L5-S2m" customClass="PKDurationPickerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Bym-JH-NRN">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="4 hours" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KM7-bl-9Yn">
-                                                    <rect key="frame" x="153" y="11" width="137" height="21"/>
+                                                    <rect key="frame" x="233" y="11" width="57" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,8 +264,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Remind me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gxn-uR-rMe">
-                                                    <rect key="frame" x="10" y="11" width="92" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Alert offset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gxn-uR-rMe">
+                                                    <rect key="frame" x="10" y="11" width="90" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -291,9 +291,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Duration" id="awL-n1-bSn"/>
+                    <connections>
+                        <outlet property="durationLabel" destination="KM7-bl-9Yn" id="Cdh-m1-jCZ"/>
+                        <outlet property="pickerView" destination="bhm-Aq-Lsj" id="sdC-Vz-TlP"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="922" y="762"/>
+            <point key="canvasLocation" x="970" y="762"/>
         </scene>
     </scenes>
     <resources>
@@ -307,6 +311,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PKDurationPickerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDurationPickerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerView" candidateClass="UIDatePicker"/>
             </relationships>
         </class>
         <class className="PKNewParkViewController" superclassName="UITableViewController">

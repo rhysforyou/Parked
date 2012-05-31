@@ -21,6 +21,7 @@
 		57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57166C9A15739BAC00A8681E /* PKAnnotation.m */; };
 		57166CA71573AFAF00A8681E /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA51573AFAF00A8681E /* map-pin.png */; };
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
+		577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */; };
 		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
 		5791609A15748BE7008230B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609915748BE7008230B4 /* icon@2x.png */; };
 		579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579160A01574CD23008230B4 /* PKNewParkViewController.m */; };
@@ -49,6 +50,8 @@
 		57166C9A15739BAC00A8681E /* PKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAnnotation.m; sourceTree = "<group>"; };
 		57166CA51573AFAF00A8681E /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
 		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
+		577A083F1576011100C6D8B3 /* PKDurationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDurationPickerViewController.h; sourceTree = "<group>"; };
+		577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDurationPickerViewController.m; sourceTree = "<group>"; };
 		5791609715748BDE008230B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		5791609915748BE7008230B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		5791609F1574CD23008230B4 /* PKNewParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNewParkViewController.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				571381CB1573745800CA5555 /* Supporting Files */,
+				577A083F1576011100C6D8B3 /* PKDurationPickerViewController.h */,
+				577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */,
 				571381D31573745800CA5555 /* PKAppDelegate.h */,
 				571381D41573745800CA5555 /* PKAppDelegate.m */,
 				571381F31573747300CA5555 /* MainStoryboard.storyboard */,
@@ -216,6 +221,7 @@
 				5713820315737A6100CA5555 /* PKParkingDetails.m in Sources */,
 				57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */,
 				579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */,
+				577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

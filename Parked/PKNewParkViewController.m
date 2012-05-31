@@ -8,6 +8,7 @@
 
 #import "PKNewParkViewController.h"
 #import "PKDetailViewController.h"
+#import "PKDurationPickerViewController.h"
 #import "PKParkingDetails.h"
 
 @interface PKNewParkViewController ()
@@ -81,7 +82,9 @@
         self.parkingDetails.notes = self.notesViw.text;
         PKDetailViewController *detailVC = (PKDetailViewController *)[segue destinationViewController];
         detailVC.parkingDetails = self.parkingDetails;
-        
+    } else if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
+        PKDurationPickerViewController *durationVC = (PKDurationPickerViewController *)[segue destinationViewController];
+        durationVC.parkingDetails = self.parkingDetails;
     }
 }
 

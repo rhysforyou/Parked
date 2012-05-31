@@ -14,6 +14,8 @@
 @synthesize notes = _notes;
 @synthesize timeInterval = _timeInterval;
 @synthesize startTime = _startTime;
+@synthesize hasAlert = _hasAlert;
+@synthesize alertOffset = _alertOffset;
 
 - (id)init
 {
@@ -22,11 +24,17 @@
     // TODO: Make this happen in a controller
     if (self) {
         self.notes = @"On level 5 of parking garage";
-        self.timeInterval = 10;
+        self.timeInterval = 3600;
         self.startTime = [NSDate date];
     }
     
     return self;
+}
+
+- (NSString *)durationString
+{
+    int minutes = self.timeInterval / 60;
+    return [NSString stringWithFormat:@"%d minutes", minutes];
 }
 
 @end

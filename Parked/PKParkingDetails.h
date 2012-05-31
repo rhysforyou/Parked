@@ -15,5 +15,9 @@
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDate *startTime;
 @property (nonatomic) NSTimeInterval timeInterval;
+@property (nonatomic) BOOL hasAlert;
+@property (nonatomic) NSTimeInterval alertOffset;
+
+- (NSString *)durationString;
 
 @end
