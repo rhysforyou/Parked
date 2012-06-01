@@ -62,6 +62,8 @@
     [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     
     [self.noteTextView setText:self.parkingDetails.notes];
+    
+    self.parkingDetails.startTime = [NSDate date];
     [self setTimerWithInterval:self.parkingDetails.timeInterval];
     
     // Center map on current location
@@ -72,7 +74,6 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    // Animated zoom
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
     [self postLocalNotification];
@@ -80,12 +81,17 @@
 
 - (void)viewDidUnload
 {
-    [self setNoteTextView:nil];
-    [self setTimerView:nil];
     [super viewDidUnload];
     [self setLocationLabel:nil];
     [self setMapView:nil];
     [self setGeocoder:nil];
+    [self setNoteTextView:nil];
+    [self setTimerView:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.annotation removeObserver:self forKeyPath:@"title"];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -147,8 +153,9 @@
 
 - (void)postLocalNotification
 {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = @"Oh no, your parking ran out";
+    notification.alertBody = @"Your parking ran out, =[";
     notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.parkingDetails.timeInterval];
     notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
