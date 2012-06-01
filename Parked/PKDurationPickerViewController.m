@@ -13,6 +13,7 @@
 
 - (void)setPickerViewToTimeInterval:(NSTimeInterval)timeInterval;
 - (void)pickerViewChangedSelection;
+- (void)alertToggled;
 
 @end
 
@@ -21,6 +22,8 @@
 @synthesize pickerView;
 @synthesize parkingDetails;
 @synthesize durationLabel;
+@synthesize alertSwitch;
+@synthesize alertDurationCell;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -38,11 +41,8 @@
     [self.pickerView addTarget:self 
                         action:@selector(pickerViewChangedSelection)
               forControlEvents:UIControlEventValueChanged];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.alertSwitch addTarget:self action:@selector(alertToggled) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,6 +55,8 @@
 {
     [self setPickerView:nil];
     [self setDurationLabel:nil];
+    [self setAlertSwitch:nil];
+    [self setAlertDurationCell:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -74,6 +76,16 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
     [self.pickerView setDate:date];
+}
+
+#pragma mark - Alert Switch
+
+- (void)alertToggled
+{
+    self.parkingDetails.hasAlert = self.alertSwitch.on;
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+    [[self.tableView cellForRowAtIndexPath:indexPath] setHidden:!self.alertSwitch.on];
 }
 
 #pragma mark - Picker View

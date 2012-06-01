@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *pickerView;
 @property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (strong, nonatomic) IBOutlet UISwitch *alertSwitch;
+@property (strong, nonatomic) IBOutlet UITableViewCell *alertDurationCell;
 @property (strong, nonatomic) PKParkingDetails *parkingDetails;
 
 @end

@@ -105,7 +105,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="durationCell" destination="Ye8-mj-GVn" id="9xC-cc-XgV"/>
                         <outlet property="durationLabel" destination="xRW-Eh-NB7" id="EEJ-uU-QXi"/>
                         <outlet property="mapView" destination="a0d-zQ-iDS" id="Tao-Zc-C9n"/>
                         <outlet property="notesViw" destination="dgz-T1-vOx" id="b49-Bm-3Mw"/>
@@ -266,8 +265,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Alert offset" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gxn-uR-rMe">
-                                                    <rect key="frame" x="10" y="11" width="90" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Alert at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gxn-uR-rMe">
+                                                    <rect key="frame" x="10" y="11" width="59" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -294,6 +293,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </tableView>
                     <navigationItem key="navigationItem" title="Duration" id="awL-n1-bSn"/>
                     <connections>
+                        <outlet property="alertDurationCell" destination="RfZ-Pf-BeH" id="vay-R0-7D8"/>
+                        <outlet property="alertSwitch" destination="tWs-gg-T0Q" id="Ium-bM-WAP"/>
                         <outlet property="durationLabel" destination="KM7-bl-9Yn" id="Cdh-m1-jCZ"/>
                         <outlet property="pickerView" destination="bhm-Aq-Lsj" id="sdC-Vz-TlP"/>
                     </connections>
@@ -318,6 +319,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PKDurationPickerViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDurationPickerViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="alertDurationCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="alertSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIDatePicker"/>
             </relationships>
@@ -325,7 +328,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PKNewParkViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="durationCell" candidateClass="UITableViewCell"/>
                 <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="notesViw" candidateClass="UITextView"/>

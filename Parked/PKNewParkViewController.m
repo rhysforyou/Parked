@@ -23,7 +23,6 @@
 @synthesize mapView;
 @synthesize notesViw;
 @synthesize durationLabel;
-@synthesize durationCell;
 @synthesize locationManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -45,12 +44,12 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    self.clearsSelectionOnViewWillAppear = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     self.durationLabel.text = [self.parkingDetails durationString];
-    self.durationCell.selected = NO;
 }
 
 - (void)viewDidUnload
@@ -58,7 +57,6 @@
     [self setMapView:nil];
     [self setNotesViw:nil];
     [self setDurationLabel:nil];
-    [self setDurationCell:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
