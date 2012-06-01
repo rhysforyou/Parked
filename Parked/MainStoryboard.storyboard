@@ -105,6 +105,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="durationCell" destination="Ye8-mj-GVn" id="XgJ-o4-wBq"/>
+                        <outlet property="durationLabel" destination="xRW-Eh-NB7" id="EEJ-uU-QXi"/>
                         <outlet property="mapView" destination="a0d-zQ-iDS" id="Tao-Zc-C9n"/>
                         <outlet property="notesViw" destination="dgz-T1-vOx" id="b49-Bm-3Mw"/>
                     </connections>
@@ -323,6 +325,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PKNewParkViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="durationCell" candidateClass="UITableViewCell"/>
+                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="notesViw" candidateClass="UITextView"/>
             </relationships>
