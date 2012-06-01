@@ -156,8 +156,9 @@
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.alertBody = @"Your parking ran out, =[";
-    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:self.parkingDetails.timeInterval];
+    notification.alertBody = [NSString stringWithFormat:@"Your parking will run out in %@", [self.parkingDetails alertDurationString]];
+    NSTimeInterval fireDate = self.parkingDetails.timeInterval - self.parkingDetails.alertOffset;
+    notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:fireDate];
     notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
