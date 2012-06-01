@@ -12,6 +12,7 @@
 @interface PKDurationPickerViewController ()
 
 - (void)setPickerViewToTimeInterval:(NSTimeInterval)timeInterval;
+- (void)pickerViewChangedSelection;
 
 @end
 
@@ -33,7 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    [self.pickerView addTarget:self 
+                        action:@selector(pickerViewChangedSelection)
+              forControlEvents:UIControlEventValueChanged];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -61,7 +65,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Utility methods
+#pragma mark - Utility Methods
 
 - (void)setPickerViewToTimeInterval:(NSTimeInterval)timeInterval
 {
@@ -70,6 +74,16 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
     [self.pickerView setDate:date];
+}
+
+#pragma mark - Picker View
+
+- (void)pickerViewChangedSelection
+{
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *date = [gregorian dateFromComponents:dateComponents];
+    self.parkingDetails.timeInterval = [self.pickerView.date timeIntervalSinceDate:date];
 }
 
 @end

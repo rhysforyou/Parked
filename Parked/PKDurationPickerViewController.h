@@ -13,7 +13,7 @@
 @interface PKDurationPickerViewController : UITableViewController <UIPickerViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *pickerView;
-@property (strong, nonatomic) PKParkingDetails *parkingDetails;
 @property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (strong, nonatomic) PKParkingDetails *parkingDetails;
 
 @end
