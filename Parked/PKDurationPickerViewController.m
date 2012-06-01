@@ -15,6 +15,8 @@
 - (void)pickerViewChangedSelection;
 - (void)alertToggled;
 
+@property (strong, nonatomic) NSString *selectedDuration;
+
 @end
 
 @implementation PKDurationPickerViewController
@@ -23,7 +25,9 @@
 @synthesize parkingDetails;
 @synthesize durationLabel;
 @synthesize alertSwitch;
+@synthesize alertDurationLabel;
 @synthesize alertDurationCell;
+@synthesize selectedDuration;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,6 +53,8 @@
 {
     [self setPickerViewToTimeInterval:self.parkingDetails.timeInterval];
     self.durationLabel.text = [self.parkingDetails durationString];
+    self.selectedDuration = @"parking";
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 - (void)viewDidUnload
@@ -57,6 +63,7 @@
     [self setDurationLabel:nil];
     [self setAlertSwitch:nil];
     [self setAlertDurationCell:nil];
+    [self setAlertDurationLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -95,8 +102,37 @@
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
-    self.parkingDetails.timeInterval = [self.pickerView.date timeIntervalSinceDate:date];
-    self.durationLabel.text = [self.parkingDetails durationString];
+    
+    if ([self.selectedDuration isEqualToString:@"parking"]) {
+        self.parkingDetails.timeInterval = [self.pickerView.date timeIntervalSinceDate:date];
+        self.durationLabel.text = [self.parkingDetails durationString];
+    } else if ([self.selectedDuration isEqualToString:@"alert"]) {
+        self.parkingDetails.alertOffset = [self.pickerView.date timeIntervalSinceDate:date];
+        self.alertDurationLabel.text = [self.parkingDetails alertDurationString];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    if (indexPath.section == 0) {
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        dateComponents.second = self.parkingDetails.timeInterval;
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDate *date = [gregorian dateFromComponents:dateComponents];
+        [self.pickerView setDate:date animated:YES];
+        
+        self.selectedDuration = @"parking";
+    } else if (indexPath.section == 1 && indexPath.row == 1) {
+        NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+        dateComponents.second = self.parkingDetails.alertOffset;
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDate *date = [gregorian dateFromComponents:dateComponents];
+        [self.pickerView setDate:date animated:YES];
+        
+        self.selectedDuration = @"alert";
+    }
 }
 
 @end

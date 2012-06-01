@@ -236,7 +236,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="W0a-ID-0ur">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iig-KX-U2W">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iig-KX-U2W">
                                         <rect key="frame" x="0.0" y="292" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -294,6 +294,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <navigationItem key="navigationItem" title="Duration" id="awL-n1-bSn"/>
                     <connections>
                         <outlet property="alertDurationCell" destination="RfZ-Pf-BeH" id="vay-R0-7D8"/>
+                        <outlet property="alertDurationLabel" destination="5xN-nh-Gsr" id="yQZ-My-I1V"/>
                         <outlet property="alertSwitch" destination="tWs-gg-T0Q" id="Ium-bM-WAP"/>
                         <outlet property="durationLabel" destination="KM7-bl-9Yn" id="Cdh-m1-jCZ"/>
                         <outlet property="pickerView" destination="bhm-Aq-Lsj" id="sdC-Vz-TlP"/>

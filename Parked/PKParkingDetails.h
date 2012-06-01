@@ -19,5 +19,6 @@
 @property (nonatomic) NSTimeInterval alertOffset;
 
 - (NSString *)durationString;
+- (NSString *)alertDurationString;
 
 @end

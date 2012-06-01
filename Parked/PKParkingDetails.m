@@ -54,4 +54,9 @@
     }
 }
 
+- (NSString *)alertDurationString
+{
+    return [NSString stringWithFormat:@"%f", self.alertOffset];
+}
+
 @end
