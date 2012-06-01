@@ -84,6 +84,7 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
     self.parkingDetails.timeInterval = [self.pickerView.date timeIntervalSinceDate:date];
+    self.durationLabel.text = [self.parkingDetails durationString];
 }
 
 @end
