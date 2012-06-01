@@ -44,7 +44,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [(PKNewParkViewController *)segue.destinationViewController setParkingDetails:[[PKParkingDetails alloc] init]];
+    if ([segue.identifier isEqualToString:@"newPark"]) {
+        [(PKNewParkViewController *)segue.destinationViewController setParkingDetails:[[PKParkingDetails alloc] init]];
+    }
 }
 
 @end
