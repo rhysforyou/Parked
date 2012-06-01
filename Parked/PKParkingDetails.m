@@ -33,8 +33,25 @@
 
 - (NSString *)durationString
 {
-    int minutes = self.timeInterval / 60;
-    return [NSString stringWithFormat:@"%d minutes", minutes];
+    int hours = self.timeInterval / 3600;
+    int minutes = ((int)self.timeInterval % 3600) / 60;
+    if (minutes && hours) {
+        if (hours > 1) {
+            return [NSString stringWithFormat:@"%d hours and %d minutes", hours, minutes];
+        } else {
+            return [NSString stringWithFormat:@"1 hour and %d minutes", minutes];
+        }
+    } else if (hours) {
+        if (hours > 1) {
+            return [NSString stringWithFormat:@"%d hours", hours];
+        } else {
+            return @"1 hour";
+        }
+    } else if (minutes) {
+        return [NSString stringWithFormat:@"%d minutes", minutes];
+    } else {
+        return @"Not set";
+    }
 }
 
 @end
