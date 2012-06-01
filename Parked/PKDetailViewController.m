@@ -123,13 +123,14 @@
 
 - (void)setTimerWithInterval:(NSTimeInterval)interval
 {
-    int minutes = interval / 60;
+    int hours = interval / 3600;
+    int minutes = ((int)interval % 3600) / 60;
     int seconds = (int)interval % 60;
     if (minutes <= 0 && seconds <= 0) {
         self.timerView.text = @"00:00";
     } else {
-        self.timerView.text = [NSString stringWithFormat:@"%.2d:%.2d", 
-                               minutes, seconds];
+        self.timerView.text = [NSString stringWithFormat:@"%.2d:%.2d:%.2d", 
+                               hours, minutes, seconds];
     }
 }
 
