@@ -124,6 +124,8 @@
 				57166C9A15739BAC00A8681E /* PKAnnotation.m */,
 				5791609F1574CD23008230B4 /* PKNewParkViewController.h */,
 				579160A01574CD23008230B4 /* PKNewParkViewController.m */,
+				57639C5D1578A1FA00745AA2 /* PKSplashScreenViewController.h */,
+				57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */,
 			);
 			path = Parked;
 			sourceTree = "<group>";
@@ -131,8 +133,6 @@
 		571381CB1573745800CA5555 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				57639C5D1578A1FA00745AA2 /* PKSplashScreenViewController.h */,
-				57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */,
 				57166CA01573AF8C00A8681E /* Images */,
 				571381CC1573745800CA5555 /* Parked-Info.plist */,
 				571381CD1573745800CA5555 /* InfoPlist.strings */,

@@ -8,6 +8,12 @@
 
 #import "PKParkingDetails.h"
 
+@interface PKParkingDetails ()
+
+- (NSString *)descriptionOfTimeInterval:(NSTimeInterval)timeInterval;
+
+@end
+
 @implementation PKParkingDetails
 
 @synthesize location = _location;
@@ -26,6 +32,8 @@
         self.notes = @"On level 5 of parking garage";
         self.timeInterval = 3600;
         self.startTime = [NSDate date];
+        self.hasAlert = false;
+        self.alertOffset = 1800;
     }
     
     return self;
@@ -33,8 +41,18 @@
 
 - (NSString *)durationString
 {
-    int hours = self.timeInterval / 3600;
-    int minutes = ((int)self.timeInterval % 3600) / 60;
+    return [self descriptionOfTimeInterval:self.timeInterval];
+}
+
+- (NSString *)alertDurationString
+{
+    return [self descriptionOfTimeInterval:self.alertOffset];
+}
+
+- (NSString *)descriptionOfTimeInterval:(NSTimeInterval)timeInterval
+{
+    int hours = timeInterval / 3600;
+    int minutes = ((int)timeInterval % 3600) / 60;
     if (minutes && hours) {
         if (hours > 1) {
             return [NSString stringWithFormat:@"%d hours and %d minutes", hours, minutes];
@@ -52,11 +70,6 @@
     } else {
         return @"Not set";
     }
-}
-
-- (NSString *)alertDurationString
-{
-    return [NSString stringWithFormat:@"%f", self.alertOffset];
 }
 
 @end

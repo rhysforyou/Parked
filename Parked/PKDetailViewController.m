@@ -76,7 +76,7 @@
 {
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
-    [self postLocalNotification];
+    if (self.parkingDetails.hasAlert) [self postLocalNotification];
 }
 
 - (void)viewDidUnload

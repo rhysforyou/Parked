@@ -53,7 +53,9 @@
 {
     [self setPickerViewToTimeInterval:self.parkingDetails.timeInterval];
     self.durationLabel.text = [self.parkingDetails durationString];
+    self.alertDurationLabel.text = [NSString stringWithFormat:@"%@ before", [self.parkingDetails alertDurationString]];
     self.selectedDuration = @"parking";
+    self.alertSwitch.on = self.parkingDetails.hasAlert;
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
@@ -90,9 +92,6 @@
 - (void)alertToggled
 {
     self.parkingDetails.hasAlert = self.alertSwitch.on;
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-    [[self.tableView cellForRowAtIndexPath:indexPath] setHidden:!self.alertSwitch.on];
 }
 
 #pragma mark - Picker View
@@ -108,14 +107,12 @@
         self.durationLabel.text = [self.parkingDetails durationString];
     } else if ([self.selectedDuration isEqualToString:@"alert"]) {
         self.parkingDetails.alertOffset = [self.pickerView.date timeIntervalSinceDate:date];
-        self.alertDurationLabel.text = [self.parkingDetails alertDurationString];
+        self.alertDurationLabel.text = [NSString stringWithFormat:@"%@ before", [self.parkingDetails alertDurationString]];
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     if (indexPath.section == 0) {
         NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
         dateComponents.second = self.parkingDetails.timeInterval;
