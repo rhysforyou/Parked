@@ -72,4 +72,28 @@
     }
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.location forKey:@"PKParkingDetailsLocation"];
+    [aCoder encodeObject:self.notes forKey:@"PKParkingDetailsNote"];
+    [aCoder encodeObject:self.startTime forKey:@"PKParkingDetailsStartTime"];
+    [aCoder encodeDouble:self.timeInterval forKey:@"PKParkingDetailsTimeInterval"];
+    [aCoder encodeBool:self.hasAlert forKey:@"PKParkingDetailsHasAlert"];
+    [aCoder encodeDouble:self.alertOffset forKey:@"PKParkingDetailsAlertOffset"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    
+    self.location = [aDecoder decodeObjectForKey:@"PKParkingDetailsLocation"];
+    self.notes = [aDecoder decodeObjectForKey:@"PKParkingDetailsNote"];
+    self.startTime = [aDecoder decodeObjectForKey:@"PKParkingDetailsStartTime"];
+    self.timeInterval = [aDecoder decodeDoubleForKey:@"PKParkingDetailsTimeInterval"];
+    self.hasAlert = [aDecoder decodeBoolForKey:@"PKParkingDetailsHasAlert"];
+    self.alertOffset = [aDecoder decodeDoubleForKey:@"PKParkingDetailsAlertOffset"];
+    
+    return self;
+}
+
 @end

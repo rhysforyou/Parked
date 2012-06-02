@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface PKParkingDetails : NSObject
+@interface PKParkingDetails : NSObject <NSCoding>
 
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *notes;
