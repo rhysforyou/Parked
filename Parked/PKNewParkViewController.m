@@ -49,6 +49,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (!self.parkingDetails) {
+        self.parkingDetails = [[PKParkingDetails alloc] init];
+    }
     self.durationLabel.text = [self.parkingDetails durationString];
 }
 

@@ -16,8 +16,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    //PKNewParkViewController *detailVC = (PKNewParkViewController *)[(UINavigationController *)self.window.rootViewController topViewController];
-    //detailVC.parkingDetails = [[PKParkingDetails alloc] init];
     return YES;
 }
 

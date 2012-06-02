@@ -42,11 +42,4 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"newPark"]) {
-        [(PKNewParkViewController *)segue.destinationViewController setParkingDetails:[[PKParkingDetails alloc] init]];
-    }
-}
-
 @end
