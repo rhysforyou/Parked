@@ -13,7 +13,6 @@
                 <navigationController definesPresentationContext="YES" id="Igx-Wi-B3S" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="svM-Gv-AkQ">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.86846786740000004" green="0.50310546160000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="xrA-Rn-KeW" kind="relationship" relationship="rootViewController" id="Otv-ld-ZmZ"/>
