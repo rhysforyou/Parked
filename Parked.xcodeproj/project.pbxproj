@@ -21,6 +21,7 @@
 		57166C9B15739BAC00A8681E /* PKAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 57166C9A15739BAC00A8681E /* PKAnnotation.m */; };
 		57166CA71573AFAF00A8681E /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA51573AFAF00A8681E /* map-pin.png */; };
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
+		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
 		57639C5F1578A1FB00745AA2 /* PKSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */; };
 		577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */; };
 		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
@@ -51,6 +52,8 @@
 		57166C9A15739BAC00A8681E /* PKAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKAnnotation.m; sourceTree = "<group>"; };
 		57166CA51573AFAF00A8681E /* map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin.png"; sourceTree = "<group>"; };
 		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
+		5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		57639C5D1578A1FA00745AA2 /* PKSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSplashScreenViewController.h; sourceTree = "<group>"; };
 		57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSplashScreenViewController.m; sourceTree = "<group>"; };
 		577A083F1576011100C6D8B3 /* PKDurationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDurationPickerViewController.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				579160A01574CD23008230B4 /* PKNewParkViewController.m */,
 				57639C5D1578A1FA00745AA2 /* PKSplashScreenViewController.h */,
 				57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */,
+				5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */,
+				5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */,
 			);
 			path = Parked;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */,
 				577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */,
 				57639C5F1578A1FB00745AA2 /* PKSplashScreenViewController.m in Sources */,
+				5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
