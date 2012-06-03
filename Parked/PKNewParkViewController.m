@@ -21,7 +21,7 @@
 
 @synthesize parkingDetails;
 @synthesize mapView;
-@synthesize notesViw;
+@synthesize notesView;
 @synthesize durationLabel;
 @synthesize locationManager;
 
@@ -58,7 +58,7 @@
 - (void)viewDidUnload
 {
     [self setMapView:nil];
-    [self setNotesViw:nil];
+    [self setNotesView:nil];
     [self setDurationLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -89,8 +89,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"pushParkingDetails"]) {
-        [self.notesViw resignFirstResponder];
-        self.parkingDetails.notes = self.notesViw.text;
+        [self.notesView resignFirstResponder];
+        self.parkingDetails.notes = self.notesView.text;
         PKDetailViewController *detailVC = (PKDetailViewController *)[segue destinationViewController];
         detailVC.parkingDetails = self.parkingDetails;
     } else if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
