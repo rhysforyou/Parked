@@ -22,6 +22,8 @@
 		57166CA71573AFAF00A8681E /* map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA51573AFAF00A8681E /* map-pin.png */; };
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
 		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
+		5735D960157C90AF00BF09D8 /* timer-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */; };
+		5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95F157C90AF00BF09D8 /* timer-bg.png */; };
 		57639C5F1578A1FB00745AA2 /* PKSplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */; };
 		577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */; };
 		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
@@ -54,6 +56,8 @@
 		57166CA61573AFAF00A8681E /* map-pin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-pin@2x.png"; sourceTree = "<group>"; };
 		5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-bg@2x.png"; sourceTree = "<group>"; };
+		5735D95F157C90AF00BF09D8 /* timer-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-bg.png"; sourceTree = "<group>"; };
 		57639C5D1578A1FA00745AA2 /* PKSplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSplashScreenViewController.h; sourceTree = "<group>"; };
 		57639C5E1578A1FB00745AA2 /* PKSplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSplashScreenViewController.m; sourceTree = "<group>"; };
 		577A083F1576011100C6D8B3 /* PKDurationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDurationPickerViewController.h; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		57166CA01573AF8C00A8681E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */,
+				5735D95F157C90AF00BF09D8 /* timer-bg.png */,
 				5791609715748BDE008230B4 /* icon.png */,
 				5791609915748BE7008230B4 /* icon@2x.png */,
 				57166CA51573AFAF00A8681E /* map-pin.png */,
@@ -215,6 +221,8 @@
 				57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */,
 				5791609815748BDE008230B4 /* icon.png in Resources */,
 				5791609A15748BE7008230B4 /* icon@2x.png in Resources */,
+				5735D960157C90AF00BF09D8 /* timer-bg@2x.png in Resources */,
+				5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

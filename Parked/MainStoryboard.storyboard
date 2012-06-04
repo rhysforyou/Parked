@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Igx-Wi-B3S">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
     </dependencies>
@@ -239,17 +238,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Notes" id="H3f-c4-sk0">
-                                <rect key="frame" x="20" y="294" width="280" height="102"/>
+                                <rect key="frame" x="20" y="311" width="280" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="CCI-ey-3xO">
-                                <rect key="frame" x="20" y="196" width="280" height="90"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="timer-bg.png" id="XVm-nt-lGN">
+                                <rect key="frame" x="10" y="201" width="300" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tAR-fD-dFe">
+                                <rect key="frame" x="20" y="201" width="280" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="0.26666668057441711" green="0.26666668057441711" blue="0.26666668057441711" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.90980398654937744" green="0.90980398654937744" blue="0.90980398654937744" alpha="1" colorSpace="deviceRGB"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -259,7 +264,7 @@
                         <outlet property="locationLabel" destination="DSE-bB-sp3" id="LgX-TO-Wkq"/>
                         <outlet property="mapView" destination="xyd-Yf-NzE" id="n60-3K-Vnz"/>
                         <outlet property="noteTextView" destination="H3f-c4-sk0" id="zu3-BD-2Jp"/>
-                        <outlet property="timerView" destination="CCI-ey-3xO" id="JoB-Ua-Mw6"/>
+                        <outlet property="timerView" destination="tAR-fD-dFe" id="DZy-9r-fka"/>
                     </connections>
                 </viewController>
             </objects>
@@ -405,6 +410,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="map-pin.png" width="11" height="20"/>
+        <image name="timer-bg.png" width="300" height="102"/>
     </resources>
     <classes>
         <class className="PKDetailViewController" superclassName="UIViewController">
