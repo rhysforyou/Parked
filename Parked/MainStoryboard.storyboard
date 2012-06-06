@@ -42,7 +42,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zdL-39-wKU" kind="push" identifier="newPark" id="KgM-Am-3fH"/>
+                                    <segue destination="rYJ-gX-7af" kind="modal" identifier="newPark" id="KgM-Am-3fH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="le5-2E-jEp">
@@ -210,7 +210,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="420" y="79"/>
+            <point key="canvasLocation" x="946" y="79"/>
         </scene>
         <!--Detail View Controller - Parking Details-->
         <scene sceneID="CnG-PR-dDf">
@@ -274,7 +274,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="976" y="79"/>
+            <point key="canvasLocation" x="1502" y="79"/>
         </scene>
         <!--Duration Picker View Controller - Duration-->
         <scene sceneID="D42-5n-6CP">
@@ -411,7 +411,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="970" y="762"/>
+            <point key="canvasLocation" x="1502" y="754"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dSb-sS-A4g">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhi-jz-lKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="rYJ-gX-7af" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="rtz-Yo-2qa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zdL-39-wKU" kind="relationship" relationship="rootViewController" id="EGU-IP-sk9"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="420" y="79"/>
         </scene>
     </scenes>
     <resources>
