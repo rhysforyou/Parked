@@ -31,6 +31,8 @@
 		5791609815748BDE008230B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609715748BDE008230B4 /* icon.png */; };
 		5791609A15748BE7008230B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5791609915748BE7008230B4 /* icon@2x.png */; };
 		579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579160A01574CD23008230B4 /* PKNewParkViewController.m */; };
+		57AD7D471580AC2C00011D75 /* prefs.png in Resources */ = {isa = PBXBuildFile; fileRef = 57AD7D451580AC2C00011D75 /* prefs.png */; };
+		57AD7D481580AC2C00011D75 /* prefs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57AD7D461580AC2C00011D75 /* prefs@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		5791609915748BE7008230B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		5791609F1574CD23008230B4 /* PKNewParkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNewParkViewController.h; sourceTree = "<group>"; };
 		579160A01574CD23008230B4 /* PKNewParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNewParkViewController.m; sourceTree = "<group>"; };
+		57AD7D451580AC2C00011D75 /* prefs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prefs.png; sourceTree = "<group>"; };
+		57AD7D461580AC2C00011D75 /* prefs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prefs@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,8 @@
 				5791609915748BE7008230B4 /* icon@2x.png */,
 				57166CA51573AFAF00A8681E /* map-pin.png */,
 				57166CA61573AFAF00A8681E /* map-pin@2x.png */,
+				57AD7D451580AC2C00011D75 /* prefs.png */,
+				57AD7D461580AC2C00011D75 /* prefs@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 				5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */,
 				571B13E8157CAB0F005429A2 /* note-sheet.png in Resources */,
 				571B13E9157CAB0F005429A2 /* note-sheet@2x.png in Resources */,
+				57AD7D471580AC2C00011D75 /* prefs.png in Resources */,
+				57AD7D481580AC2C00011D75 /* prefs@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

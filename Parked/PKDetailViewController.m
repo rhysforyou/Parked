@@ -52,6 +52,7 @@
                                              selector:@selector(didBecomeActive) 
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
