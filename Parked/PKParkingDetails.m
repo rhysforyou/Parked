@@ -70,6 +70,14 @@
     }
 }
 
+- (NSTimeInterval)remainingTime
+{
+    NSTimeInterval delta = [[NSDate date] timeIntervalSinceDate:self.startTime];
+    return self.timeInterval - delta;
+}
+
+# pragma mark - NSCoding
+
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:self.location forKey:@"PKParkingDetailsLocation"];

@@ -20,5 +20,6 @@
 
 - (NSString *)durationString;
 - (NSString *)alertDurationString;
+- (NSTimeInterval)remainingTime;
 
 @end

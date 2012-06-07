@@ -139,9 +139,7 @@
 
 - (void)updateTimer
 {
-    NSTimeInterval delta = [[NSDate date] timeIntervalSinceDate:self.parkingDetails.startTime];
-    NSTimeInterval remainingTime = self.parkingDetails.timeInterval - delta;
-    [self setTimerWithInterval:remainingTime];
+    [self setTimerWithInterval:[self.parkingDetails remainingTime]];
 }
 
 - (void)beginTimer
