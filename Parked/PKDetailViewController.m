@@ -77,6 +77,9 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    if ([self.parkingDetails remainingTime] <= 0) {
+        [self performSegueWithIdentifier:@"newPark" sender:self];
+    }
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
     if (self.parkingDetails.hasAlert) [self postLocalNotification];
