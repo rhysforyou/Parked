@@ -29,7 +29,6 @@
     
     // TODO: Make this happen in a controller
     if (self) {
-        self.notes = @"On level 5 of parking garage";
         self.timeInterval = 3600;
         self.hasAlert = false;
         self.alertOffset = 1800;

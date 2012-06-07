@@ -23,6 +23,11 @@
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
 		571B13E8157CAB0F005429A2 /* note-sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E6157CAB0F005429A2 /* note-sheet.png */; };
 		571B13E9157CAB0F005429A2 /* note-sheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E7157CAB0F005429A2 /* note-sheet@2x.png */; };
+		571C38AC1580BFD100C5C093 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 571C38A81580BFD100C5C093 /* libTestFlight.a */; };
+		571C38AD1580BFD100C5C093 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 571C38A91580BFD100C5C093 /* README.txt */; };
+		571C38AE1580BFD100C5C093 /* release_notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 571C38AA1580BFD100C5C093 /* release_notes.txt */; };
+		571C38B01580BFFE00C5C093 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 571C38AF1580BFFE00C5C093 /* libz.dylib */; };
+		571C38B31580C1F500C5C093 /* PKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571C38B21580C1F500C5C093 /* PKSettingsViewController.m */; };
 		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
 		5735D960157C90AF00BF09D8 /* timer-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */; };
 		5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95F157C90AF00BF09D8 /* timer-bg.png */; };
@@ -61,6 +66,13 @@
 		571B13E6157CAB0F005429A2 /* note-sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-sheet.png"; sourceTree = "<group>"; };
 		571B13E7157CAB0F005429A2 /* note-sheet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-sheet@2x.png"; sourceTree = "<group>"; };
 		571C38A51580B86F00C5C093 /* Parked.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Parked.entitlements; sourceTree = "<group>"; };
+		571C38A81580BFD100C5C093 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		571C38A91580BFD100C5C093 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		571C38AA1580BFD100C5C093 /* release_notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.txt; sourceTree = "<group>"; };
+		571C38AB1580BFD100C5C093 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		571C38AF1580BFFE00C5C093 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		571C38B11580C1F500C5C093 /* PKSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKSettingsViewController.h; sourceTree = "<group>"; };
+		571C38B21580C1F500C5C093 /* PKSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKSettingsViewController.m; sourceTree = "<group>"; };
 		5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-bg@2x.png"; sourceTree = "<group>"; };
@@ -81,11 +93,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				571C38B01580BFFE00C5C093 /* libz.dylib in Frameworks */,
 				5713820515737A8200CA5555 /* CoreLocation.framework in Frameworks */,
 				571381FD1573779700CA5555 /* MapKit.framework in Frameworks */,
 				571381C51573745800CA5555 /* UIKit.framework in Frameworks */,
 				571381C71573745800CA5555 /* Foundation.framework in Frameworks */,
 				571381C91573745800CA5555 /* CoreGraphics.framework in Frameworks */,
+				571C38AC1580BFD100C5C093 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +109,8 @@
 		571381B51573745700CA5555 = {
 			isa = PBXGroup;
 			children = (
+				571C38AF1580BFFE00C5C093 /* libz.dylib */,
+				571C38A71580BFD100C5C093 /* TestFlightSDK */,
 				571381CA1573745800CA5555 /* Parked */,
 				571381C31573745800CA5555 /* Frameworks */,
 				571381C11573745800CA5555 /* Products */,
@@ -142,6 +158,8 @@
 				579160A01574CD23008230B4 /* PKNewParkViewController.m */,
 				5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */,
 				5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */,
+				571C38B11580C1F500C5C093 /* PKSettingsViewController.h */,
+				571C38B21580C1F500C5C093 /* PKSettingsViewController.m */,
 			);
 			path = Parked;
 			sourceTree = "<group>";
@@ -174,6 +192,18 @@
 				57AD7D461580AC2C00011D75 /* prefs@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		571C38A71580BFD100C5C093 /* TestFlightSDK */ = {
+			isa = PBXGroup;
+			children = (
+				571C38A81580BFD100C5C093 /* libTestFlight.a */,
+				571C38A91580BFD100C5C093 /* README.txt */,
+				571C38AA1580BFD100C5C093 /* release_notes.txt */,
+				571C38AB1580BFD100C5C093 /* TestFlight.h */,
+			);
+			name = TestFlightSDK;
+			path = TestFlightSDK1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +270,8 @@
 				57AD7D471580AC2C00011D75 /* prefs.png in Resources */,
 				57AD7D481580AC2C00011D75 /* prefs@2x.png in Resources */,
 				57AD7D4B1580AE6500011D75 /* Default@2x.png in Resources */,
+				571C38AD1580BFD100C5C093 /* README.txt in Resources */,
+				571C38AE1580BFD100C5C093 /* release_notes.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +290,7 @@
 				579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */,
 				577A08411576011100C6D8B3 /* PKDurationPickerViewController.m in Sources */,
 				5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */,
+				571C38B31580C1F500C5C093 /* PKSettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +343,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -332,6 +365,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Parked/Parked-Prefix.pch";
 				INFOPLIST_FILE = "Parked/Parked-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -344,6 +381,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Parked/Parked-Prefix.pch";
 				INFOPLIST_FILE = "Parked/Parked-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
