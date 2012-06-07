@@ -72,7 +72,7 @@
 		579160A01574CD23008230B4 /* PKNewParkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNewParkViewController.m; sourceTree = "<group>"; };
 		57AD7D451580AC2C00011D75 /* prefs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prefs.png; sourceTree = "<group>"; };
 		57AD7D461580AC2C00011D75 /* prefs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "prefs@2x.png"; sourceTree = "<group>"; };
-		57AD7D4A1580AE6500011D75 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		57AD7D4A1580AE6500011D75 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,6 @@
 		571381B51573745700CA5555 = {
 			isa = PBXGroup;
 			children = (
-				57AD7D4A1580AE6500011D75 /* Default@2x.png */,
 				571381CA1573745800CA5555 /* Parked */,
 				571381C31573745800CA5555 /* Frameworks */,
 				571381C11573745800CA5555 /* Products */,
@@ -160,6 +159,7 @@
 		57166CA01573AF8C00A8681E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				57AD7D4A1580AE6500011D75 /* Default@2x.png */,
 				571B13E6157CAB0F005429A2 /* note-sheet.png */,
 				571B13E7157CAB0F005429A2 /* note-sheet@2x.png */,
 				5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */,
