@@ -56,20 +56,22 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
+    self.parkingDetails = [NSKeyedUnarchiver unarchiveObjectWithFile:archivePath];
+    
     // Add annotation for the user's location
     self.annotation = [[PKAnnotation alloc] initWithParkingDetails:self.parkingDetails];
     [self.mapView addAnnotation:self.annotation];
     [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
     
     [self.noteTextView setText:self.parkingDetails.notes];
-    
-    self.parkingDetails.startTime = [NSDate date];
     [self setTimerWithInterval:self.parkingDetails.timeInterval];
     
     // Center map on current location
     [self.mapView setCenterCoordinate:[self.parkingDetails.location coordinate]];
     
     [self beginTimer];
+    [self updateTimer];
 }
 
 - (void)viewDidAppear:(BOOL)animated

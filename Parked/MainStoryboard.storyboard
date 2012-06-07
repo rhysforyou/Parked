@@ -60,6 +60,21 @@
                                     <segue destination="Ikq-Dt-I6k" kind="modal" modalTransitionStyle="partialCurl" id="VPp-hk-lPt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ebF-cA-WYC">
+                                <rect key="frame" x="15" y="189" width="285" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Current Park">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ugz-H3-sLH" kind="push" identifier="showPark" id="col-cN-85i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -118,7 +133,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="420" y="-506"/>
+            <point key="canvasLocation" x="488" y="-511"/>
         </scene>
         <!--New Park View Controller - New Park-->
         <scene sceneID="vQ7-jU-giQ">
@@ -197,9 +212,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Park" id="Wdv-Fn-Z6K">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JeN-Ws-mnP">
+                            <connections>
+                                <action selector="cancel:" destination="zdL-39-wKU" id="pne-Rn-FlQ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="1TR-Mg-w0K">
                             <connections>
-                                <segue destination="ugz-H3-sLH" kind="push" identifier="pushParkingDetails" id="bth-zw-sZh"/>
+                                <action selector="save:" destination="zdL-39-wKU" id="jgD-CC-i1H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -210,7 +230,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="946" y="79"/>
+            <point key="canvasLocation" x="1014" y="74"/>
         </scene>
         <!--Detail View Controller - Parking Details-->
         <scene sceneID="CnG-PR-dDf">
@@ -274,7 +294,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1502" y="79"/>
+            <point key="canvasLocation" x="488" y="668"/>
         </scene>
         <!--Duration Picker View Controller - Duration-->
         <scene sceneID="D42-5n-6CP">
@@ -411,7 +431,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1502" y="754"/>
+            <point key="canvasLocation" x="1532" y="74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dSb-sS-A4g">
@@ -429,7 +449,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="420" y="79"/>
+            <point key="canvasLocation" x="488" y="79"/>
         </scene>
     </scenes>
     <resources>
@@ -460,6 +480,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="PKNewParkViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="save:"/>
                 <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="notesView" candidateClass="UITextView"/>

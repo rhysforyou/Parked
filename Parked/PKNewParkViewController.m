@@ -99,4 +99,15 @@
     }
 }
 
+- (IBAction)save:(id)sender {
+    self.parkingDetails.startTime = [NSDate date];
+    NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
+    [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (IBAction)cancel:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 @end

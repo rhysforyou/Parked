@@ -31,7 +31,6 @@
     if (self) {
         self.notes = @"On level 5 of parking garage";
         self.timeInterval = 3600;
-        self.startTime = [NSDate date];
         self.hasAlert = false;
         self.alertOffset = 1800;
     }
