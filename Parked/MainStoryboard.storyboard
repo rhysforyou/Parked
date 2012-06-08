@@ -422,19 +422,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </mapView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="c86-qL-Z1t"/>
-                        <barButtonItem title="Car" id="no1-Jm-55C">
+                        <barButtonItem image="pin.png" style="plain" id="no1-Jm-55C">
                             <connections>
                                 <action selector="centerOnCar:" destination="8nm-Nh-EVi" id="tao-p1-QZs"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="haD-fk-G5s"/>
-                        <barButtonItem title="You" id="95b-cT-6qb">
+                        <barButtonItem image="location.png" style="plain" id="95b-cT-6qb">
                             <connections>
                                 <action selector="centerOnUserLocation:" destination="8nm-Nh-EVi" id="hPC-r6-BHi"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dBm-nF-jpA"/>
-                        <barButtonItem title="Walk" id="HKx-dW-796">
+                        <barButtonItem image="walk.png" style="plain" id="HKx-dW-796">
                             <connections>
                                 <action selector="showWalkingDirections:" destination="8nm-Nh-EVi" id="oVW-u6-WJ3"/>
                             </connections>
@@ -454,10 +454,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </scene>
     </scenes>
     <resources>
+        <image name="location.png" width="20" height="20"/>
         <image name="map-pin.png" width="11" height="20"/>
         <image name="note-sheet.png" width="320" height="110"/>
+        <image name="pin.png" width="10" height="20"/>
         <image name="prefs.png" width="19" height="19"/>
         <image name="timer-bg.png" width="300" height="102"/>
+        <image name="walk.png" width="14" height="27"/>
     </resources>
     <classes>
         <class className="PKDetailViewController" superclassName="UIViewController">
