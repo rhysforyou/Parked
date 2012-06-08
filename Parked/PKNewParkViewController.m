@@ -96,6 +96,7 @@
 
 - (IBAction)save:(id)sender {
     self.parkingDetails.startTime = [NSDate date];
+    self.parkingDetails.notes = self.notesView.text;
     NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
     [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
     [self dismissModalViewControllerAnimated:YES];
