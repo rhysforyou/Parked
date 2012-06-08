@@ -98,6 +98,8 @@
 
 - (void)pickerViewChangedSelection
 {
+    [self.alertSwitch setOn:YES animated:YES];
+    self.parkingDetails.hasAlert = YES;
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
