@@ -23,15 +23,20 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [self.navigationController setToolbarHidden:NO animated:animated];
     [self.mapView addAnnotation:self.annotation];
     [self centerMapOnLocation:self.parkingDetails.location animated:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
 - (void)viewDidUnload
@@ -57,4 +62,16 @@
     [self.mapView setRegion:coordinateRegion animated:animated];
 }
 
+#pragma mark - Toolbar Actions
+
+- (IBAction)centerOnCar:(id)sender {
+    [self centerMapOnLocation:self.parkingDetails.location animated:YES];
+}
+
+- (IBAction)centerOnUserLocation:(id)sender {
+    [self centerMapOnLocation:mapView.userLocation.location animated:YES];
+}
+
+- (IBAction)showWalkingDirections:(id)sender {
+}
 @end

@@ -18,4 +18,8 @@
 @property (strong, nonatomic) PKParkingDetails *parkingDetails;
 @property (nonatomic, strong) PKAnnotation *annotation;
 
+- (IBAction)centerOnCar:(id)sender;
+- (IBAction)centerOnUserLocation:(id)sender;
+- (IBAction)showWalkingDirections:(id)sender;
+
 @end
