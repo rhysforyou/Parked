@@ -64,6 +64,7 @@
     self.parkingDetails = [NSKeyedUnarchiver unarchiveObjectWithFile:archivePath];
     
     // Add annotation for the user's location
+    [self.mapView removeAnnotations:[self.mapView annotations]];
     self.annotation = [[PKAnnotation alloc] initWithParkingDetails:self.parkingDetails];
     [self.mapView addAnnotation:self.annotation];
     [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
