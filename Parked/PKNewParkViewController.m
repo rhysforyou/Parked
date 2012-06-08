@@ -88,12 +88,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"pushParkingDetails"]) {
-        [self.notesView resignFirstResponder];
-        self.parkingDetails.notes = self.notesView.text;
-        PKDetailViewController *detailVC = (PKDetailViewController *)[segue destinationViewController];
-        detailVC.parkingDetails = self.parkingDetails;
-    } else if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
+    if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
         PKDurationPickerViewController *durationVC = (PKDurationPickerViewController *)[segue destinationViewController];
         durationVC.parkingDetails = self.parkingDetails;
     }
