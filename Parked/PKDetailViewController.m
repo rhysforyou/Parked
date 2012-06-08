@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "PKDetailViewController.h"
 #import "PKParkingDetails.h"
+#import "PKMapViewController.h"
 
 @interface PKDetailViewController ()
 
@@ -178,6 +179,17 @@
 {
     if ([keyPath isEqual:@"title"]) {
         self.locationLabel.text = [(PKAnnotation *)object title];
+    }
+}
+
+#pragma mark - Storyboard
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showLargeMap"]) {
+        PKMapViewController *destinationVC = (PKMapViewController *)[segue destinationViewController];
+        destinationVC.parkingDetails = self.parkingDetails;
+        destinationVC.annotation = self.annotation;
     }
 }
 

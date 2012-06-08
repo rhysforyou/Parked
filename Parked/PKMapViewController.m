@@ -1,0 +1,60 @@
+//
+//  PKMapViewController.m
+//  Parked
+//
+//  Created by Rhys Powell on 8/06/12.
+//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//
+
+#import "PKMapViewController.h"
+#import "PKAnnotation.h"
+#import "PKParkingDetails.h"
+
+@interface PKMapViewController ()
+
+@end
+
+@implementation PKMapViewController
+@synthesize mapView;
+@synthesize parkingDetails;
+@synthesize annotation;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.mapView addAnnotation:self.annotation];
+    [self centerMapOnLocation:self.parkingDetails.location animated:NO];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    [self setMapView:nil];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark - Utility Methods
+
+- (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated
+{
+    MKCoordinateRegion coordinateRegion;
+    coordinateRegion.center = location.coordinate;
+    // Longitude varies based on latitude, so it's best to just use latitude for the span
+    coordinateRegion.span = MKCoordinateSpanMake(0.002, 0.0);
+    coordinateRegion = [self.mapView regionThatFits:coordinateRegion];
+    [self.mapView setRegion:coordinateRegion animated:animated];
+}
+
+@end
