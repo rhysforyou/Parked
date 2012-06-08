@@ -15,6 +15,7 @@
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) PKAnnotation *annotation;
 @property (strong, nonatomic) NSTimer *timer;
+@property BOOL hasShownModal;
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated;
 - (void)setTimerWithInterval:(NSTimeInterval)interval;
@@ -35,6 +36,7 @@
 @synthesize timerView = _timerView;
 @synthesize geocoder = _geocoder;
 @synthesize timer;
+@synthesize hasShownModal;
 
 #pragma mark - View Lifecycle
 
@@ -53,6 +55,7 @@
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
     
+    self.hasShownModal = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,9 +80,11 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    if ([self.parkingDetails remainingTime] <= 0) {
+    if ([self.parkingDetails remainingTime] <= 0 && !hasShownModal) {
+        hasShownModal = YES;
         [self performSegueWithIdentifier:@"newPark" sender:self];
     }
+    
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
     if (self.parkingDetails.hasAlert) [self postLocalNotification];
