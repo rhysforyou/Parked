@@ -98,8 +98,6 @@
 
 - (void)pickerViewChangedSelection
 {
-    [self.alertSwitch setOn:YES animated:YES];
-    self.parkingDetails.hasAlert = YES;
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *date = [gregorian dateFromComponents:dateComponents];
@@ -108,6 +106,8 @@
         self.parkingDetails.timeInterval = [self.pickerView.date timeIntervalSinceDate:date];
         self.durationLabel.text = [self.parkingDetails durationString];
     } else if ([self.selectedDuration isEqualToString:@"alert"]) {
+        [self.alertSwitch setOn:YES animated:YES];
+        self.parkingDetails.hasAlert = YES;
         self.parkingDetails.alertOffset = [self.pickerView.date timeIntervalSinceDate:date];
         self.alertDurationLabel.text = [NSString stringWithFormat:@"%@ before", [self.parkingDetails alertDurationString]];
     }
