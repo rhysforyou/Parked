@@ -14,6 +14,7 @@
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDate *startTime;
+@property (strong, nonatomic) NSString *addressString;
 @property (nonatomic) NSTimeInterval timeInterval;
 @property (nonatomic) BOOL hasAlert;
 @property (nonatomic) NSTimeInterval alertOffset;
@@ -21,5 +22,9 @@
 - (NSString *)durationString;
 - (NSString *)alertDurationString;
 - (NSTimeInterval)remainingTime;
+
+// Notifications
+
+extern NSString *parkingDetailsAddressStringDidUpdateNotification;
 
 @end

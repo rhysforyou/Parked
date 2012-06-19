@@ -8,6 +8,8 @@
 
 #import "PKParkingDetails.h"
 
+NSString *parkingDetailsAddressStringDidUpdateNotification;
+
 @interface PKParkingDetails ()
 
 - (NSString *)descriptionOfTimeInterval:(NSTimeInterval)timeInterval;
@@ -18,8 +20,9 @@
 
 @synthesize location = _location;
 @synthesize notes = _notes;
-@synthesize timeInterval = _timeInterval;
+@synthesize addressString = _addressString;
 @synthesize startTime = _startTime;
+@synthesize timeInterval = _timeInterval;
 @synthesize hasAlert = _hasAlert;
 @synthesize alertOffset = _alertOffset;
 
@@ -35,6 +38,27 @@
     }
     
     return self;
+}
+
+- (void)setLocation:(CLLocation *)location
+{
+    _location = location;
+    [self updateLocationString];
+}
+
+- (void)updateLocationString
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:_location completionHandler:^(NSArray* placemarks, NSError* error) {
+        if ([placemarks count] > 0) {
+            _addressString = [[placemarks objectAtIndex:0] name];
+        } else {
+            _addressString = @"Unable to determine address";
+        }
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        [[NSNotificationCenter defaultCenter] postNotificationName:parkingDetailsAddressStringDidUpdateNotification object:self];
+    }];
 }
 
 - (NSString *)durationString

@@ -24,6 +24,7 @@
 - (void)didBecomeActive;
 - (void)beginTimer;
 - (void)postLocalNotification;
+- (void)updateAddress;
 
 @end
 
@@ -64,7 +65,11 @@
     [self.mapView removeAnnotations:[self.mapView annotations]];
     self.annotation = [[PKAnnotation alloc] initWithParkingDetails:self.parkingDetails];
     [self.mapView addAnnotation:self.annotation];
-    [self.annotation addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(updateAddress) 
+                                                 name:parkingDetailsAddressStringDidUpdateNotification 
+                                               object:nil];
     
     [self.noteTextView setText:self.parkingDetails.notes];
     [self setTimerWithInterval:self.parkingDetails.timeInterval];
@@ -95,7 +100,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    [self.annotation removeObserver:self forKeyPath:@"title"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -111,6 +116,11 @@
 - (void)didBecomeActive
 {
     [self beginTimer];
+}
+
+- (void)updateAddress
+{
+    self.locationLabel.text = self.parkingDetails.addressString;
 }
 
 #pragma mark - Utility Methods
@@ -163,15 +173,6 @@
     notification.fireDate = [NSDate dateWithTimeInterval:offset sinceDate:self.parkingDetails.startTime];
     notification.soundName = UILocalNotificationDefaultSoundName;
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
-}
-
-#pragma mark - Key-Value Observing
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqual:@"title"]) {
-        self.locationLabel.text = [(PKAnnotation *)object title];
-    }
 }
 
 #pragma mark - Storyboard

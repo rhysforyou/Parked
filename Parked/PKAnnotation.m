@@ -9,11 +9,18 @@
 #import "PKAnnotation.h"
 #import "PKParkingDetails.h"
 
+@interface PKAnnotation ()
+
+@property (strong, nonatomic) PKParkingDetails *parkingDetails;
+
+@end
+
 @implementation PKAnnotation
 
 @synthesize coordinate = _coordinate;
-@synthesize title = _title;
 @synthesize subtitle = _subtitle;
+@synthesize title = _title;
+@synthesize parkingDetails = _parkingDetails;
 
 - (id)initWithParkingDetails:(PKParkingDetails *)parkingDetails
 {
@@ -21,21 +28,14 @@
     if (self) {
         _coordinate.latitude = parkingDetails.location.coordinate.latitude;
         _coordinate.longitude = parkingDetails.location.coordinate.longitude;
-        _title = @"Getting address";
-        
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        CLLocation *location = [[CLLocation alloc] initWithLatitude:self.coordinate.latitude longitude:self.coordinate.longitude];
-        [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray* placemarks, NSError* error) {
-            if ([placemarks count] > 0) {
-                [self setValue:[[placemarks objectAtIndex:0] name] forKey:@"title"];
-            } else {
-                [self setValue:@"Unable to determine address" forKey:@"title"];
-            }
-            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        }];
+        _parkingDetails = parkingDetails;
     }    
     return self;
+}
+
+- (NSString *)title
+{
+    return self.parkingDetails.addressString;
 }
 
 @end
