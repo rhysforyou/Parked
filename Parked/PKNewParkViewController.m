@@ -55,16 +55,6 @@
     self.durationLabel.text = [self.parkingDetails durationString];
 }
 
-- (void)viewDidUnload
-{
-    [self setMapView:nil];
-    [self setNotesView:nil];
-    [self setDurationLabel:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

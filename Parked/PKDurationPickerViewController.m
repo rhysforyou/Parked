@@ -59,18 +59,6 @@
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
-- (void)viewDidUnload
-{
-    [self setPickerView:nil];
-    [self setDurationLabel:nil];
-    [self setAlertSwitch:nil];
-    [self setAlertDurationCell:nil];
-    [self setAlertDurationLabel:nil];
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

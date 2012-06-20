@@ -39,12 +39,6 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    [self setMapView:nil];
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);

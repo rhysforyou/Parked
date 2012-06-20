@@ -88,16 +88,6 @@
     if (self.parkingDetails.hasAlert) [self postLocalNotification];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    [self setLocationLabel:nil];
-    [self setMapView:nil];
-    [self setGeocoder:nil];
-    [self setNoteTextView:nil];
-    [self setTimerView:nil];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
