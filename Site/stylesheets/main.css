@@ -6,18 +6,28 @@ body {
   width: 800px;
   margin: auto;
   margin-top: 40px; }
-  #wrapper img.screenshot {
-    float: left;
-    margin-right: 40px; }
-  #wrapper header h1 small {
+
+img.screenshot {
+  float: left;
+  margin-right: 40px; }
+
+header img.app-icon {
+  float: left;
+  padding-right: 16px; }
+header h1 {
+  padding: 50px 0; }
+  header h1 small {
     font-weight: normal;
     color: #aaaaaa; }
-  #wrapper li, #wrapper p {
-    margin-bottom: 1em; }
-  #wrapper footer {
-    margin-top: 50px;
-    color: #aaaaaa;
-    font-size: 12px; }
-  #wrapper a#app-store-link img {
-    display: block;
-    margin: auto; }
+
+li, p {
+  margin-bottom: 1em; }
+
+footer {
+  margin-top: 50px;
+  color: #aaaaaa;
+  font-size: 12px; }
+
+a#app-store-link img {
+  display: block;
+  margin: auto; }
