@@ -53,6 +53,7 @@
         self.parkingDetails = [[PKParkingDetails alloc] init];
     }
     self.durationLabel.text = [self.parkingDetails durationString];
+    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
