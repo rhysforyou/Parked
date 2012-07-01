@@ -24,6 +24,8 @@
 		571B13E8157CAB0F005429A2 /* note-sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E6157CAB0F005429A2 /* note-sheet.png */; };
 		571B13E9157CAB0F005429A2 /* note-sheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E7157CAB0F005429A2 /* note-sheet@2x.png */; };
 		571C38B01580BFFE00C5C093 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 571C38AF1580BFFE00C5C093 /* libz.dylib */; };
+		57260DA415A0718100ADA42E /* full-screen-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA215A0718100ADA42E /* full-screen-button.png */; };
+		57260DA515A0718100ADA42E /* full-screen-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA315A0718100ADA42E /* full-screen-button@2x.png */; };
 		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
 		5735D960157C90AF00BF09D8 /* timer-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */; };
 		5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95F157C90AF00BF09D8 /* timer-bg.png */; };
@@ -73,6 +75,8 @@
 		571B13E6157CAB0F005429A2 /* note-sheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-sheet.png"; sourceTree = "<group>"; };
 		571B13E7157CAB0F005429A2 /* note-sheet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note-sheet@2x.png"; sourceTree = "<group>"; };
 		571C38AF1580BFFE00C5C093 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		57260DA215A0718100ADA42E /* full-screen-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full-screen-button.png"; sourceTree = "<group>"; };
+		57260DA315A0718100ADA42E /* full-screen-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full-screen-button@2x.png"; sourceTree = "<group>"; };
 		5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-bg@2x.png"; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 		57166CA01573AF8C00A8681E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				57260DA215A0718100ADA42E /* full-screen-button.png */,
+				57260DA315A0718100ADA42E /* full-screen-button@2x.png */,
 				57366599159D7CE3000C07C2 /* icon-small.png */,
 				5736659A159D7CE3000C07C2 /* icon-small@2x.png */,
 				5739DDE51581CE0700DC1BF6 /* walk@2x.png */,
@@ -287,6 +293,8 @@
 				57366598159D7669000C07C2 /* Default.png in Resources */,
 				5736659B159D7CE3000C07C2 /* icon-small.png in Resources */,
 				5736659C159D7CE3000C07C2 /* icon-small@2x.png in Resources */,
+				57260DA415A0718100ADA42E /* full-screen-button.png in Resources */,
+				57260DA515A0718100ADA42E /* full-screen-button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
