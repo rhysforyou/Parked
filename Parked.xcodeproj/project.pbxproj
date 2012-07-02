@@ -23,7 +23,6 @@
 		57166CA81573AFAF00A8681E /* map-pin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57166CA61573AFAF00A8681E /* map-pin@2x.png */; };
 		571B13E8157CAB0F005429A2 /* note-sheet.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E6157CAB0F005429A2 /* note-sheet.png */; };
 		571B13E9157CAB0F005429A2 /* note-sheet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 571B13E7157CAB0F005429A2 /* note-sheet@2x.png */; };
-		571C38B01580BFFE00C5C093 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 571C38AF1580BFFE00C5C093 /* libz.dylib */; };
 		57260DA415A0718100ADA42E /* full-screen-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA215A0718100ADA42E /* full-screen-button.png */; };
 		57260DA515A0718100ADA42E /* full-screen-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA315A0718100ADA42E /* full-screen-button@2x.png */; };
 		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
@@ -108,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571C38B01580BFFE00C5C093 /* libz.dylib in Frameworks */,
 				5713820515737A8200CA5555 /* CoreLocation.framework in Frameworks */,
 				571381FD1573779700CA5555 /* MapKit.framework in Frameworks */,
 				571381C51573745800CA5555 /* UIKit.framework in Frameworks */,
