@@ -46,7 +46,6 @@
 		579160A11574CD23008230B4 /* PKNewParkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 579160A01574CD23008230B4 /* PKNewParkViewController.m */; };
 		57AD7D471580AC2C00011D75 /* prefs.png in Resources */ = {isa = PBXBuildFile; fileRef = 57AD7D451580AC2C00011D75 /* prefs.png */; };
 		57AD7D481580AC2C00011D75 /* prefs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57AD7D461580AC2C00011D75 /* prefs@2x.png */; };
-		57AD7D4B1580AE6500011D75 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57AD7D4A1580AE6500011D75 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -282,7 +281,6 @@
 				571B13E9157CAB0F005429A2 /* note-sheet@2x.png in Resources */,
 				57AD7D471580AC2C00011D75 /* prefs.png in Resources */,
 				57AD7D481580AC2C00011D75 /* prefs@2x.png in Resources */,
-				57AD7D4B1580AE6500011D75 /* Default@2x.png in Resources */,
 				5739DDEB1581CE0700DC1BF6 /* walk@2x.png in Resources */,
 				5739DDEC1581CE0700DC1BF6 /* walk.png in Resources */,
 				5739DDED1581CE0700DC1BF6 /* pin@2x.png in Resources */,
