@@ -110,8 +110,6 @@
     NSTimeInterval expirationTime = [self.parkingDetails.startTime timeIntervalSince1970] + self.parkingDetails.timeInterval;
     NSTimeInterval timeSinceExpiration = [[NSDate date] timeIntervalSince1970] - expirationTime;
     
-    NSLog(@"%f", timeSinceExpiration);
-    
     if (timeSinceExpiration > 15 * 60 || self.parkingDetails == Nil) { // 15 minutes
         [self performSegueWithIdentifier:@"newPark" sender:self];
     }
