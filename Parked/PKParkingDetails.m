@@ -20,8 +20,9 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 
 @synthesize location = _location;
 @synthesize notes = _notes;
-@synthesize addressString = _addressString;
 @synthesize startTime = _startTime;
+@synthesize addressString = _addressString;
+@synthesize mapItem = _mapItem;
 @synthesize timeInterval = _timeInterval;
 @synthesize hasAlert = _hasAlert;
 @synthesize alertOffset = _alertOffset;
@@ -52,7 +53,9 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder reverseGeocodeLocation:_location completionHandler:^(NSArray* placemarks, NSError* error) {
         if ([placemarks count] > 0) {
-            _addressString = [[placemarks objectAtIndex:0] name];
+            MKPlacemark *newPlacemark = [[MKPlacemark alloc] initWithCoordinate:_location.coordinate addressDictionary:[[placemarks objectAtIndex:0] addressDictionary]];
+            _addressString = [newPlacemark name];
+            _mapItem = [[MKMapItem alloc] initWithPlacemark:newPlacemark];
         } else {
             _addressString = @"Unable to determine address";
         }

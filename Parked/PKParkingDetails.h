@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#include <MapKit/MapKit.h>
 
 @interface PKParkingDetails : NSObject <NSCoding>
 
@@ -15,6 +16,7 @@
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDate *startTime;
 @property (strong, nonatomic) NSString *addressString;
+@property (strong, nonatomic) MKMapItem *mapItem;
 @property (nonatomic) NSTimeInterval timeInterval;
 @property (nonatomic) BOOL hasAlert;
 @property (nonatomic) NSTimeInterval alertOffset;
