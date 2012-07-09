@@ -67,14 +67,24 @@
 }
 
 - (IBAction)showWalkingDirections:(id)sender {
-    NSDictionary *launchOptions = @{
+    if ([self.parkingDetails.mapItem respondsToSelector:@selector(openInMapsWithLaunchOptions:)]) {
+        
+        NSDictionary *launchOptions = @{
         MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,
         MKLaunchOptionsMapTypeKey : [NSNumber numberWithInt:MKMapTypeStandard]
-    };
-    if (self.parkingDetails.mapItem != nil) {
+        };
         [self.parkingDetails.mapItem openInMapsWithLaunchOptions:launchOptions];
     } else {
-        NSLog(@"Oops!");
+        NSString *mapURL = @"http://maps.google.com/maps?";
+        mapURL = [mapURL stringByAppendingFormat:@"saddr=%f,%f&", 
+                  self.mapView.userLocation.location.coordinate.latitude, 
+                  self.mapView.userLocation.location.coordinate.longitude];
+        mapURL = [mapURL stringByAppendingFormat:@"daddr=%f,%f&",
+                  self.parkingDetails.location.coordinate.latitude,
+                  self.parkingDetails.location.coordinate.longitude];
+        mapURL = [mapURL stringByAppendingFormat:@"dirflg=w"];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];
     }
 }
 
