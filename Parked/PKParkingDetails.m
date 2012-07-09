@@ -56,12 +56,19 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
             MKPlacemark *newPlacemark = [[MKPlacemark alloc] initWithCoordinate:_location.coordinate addressDictionary:[[placemarks objectAtIndex:0] addressDictionary]];
             _addressString = [newPlacemark name];
             _mapItem = [[MKMapItem alloc] initWithPlacemark:newPlacemark];
-        } else {
-            _addressString = @"Unable to determine address";
         }
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [[NSNotificationCenter defaultCenter] postNotificationName:parkingDetailsAddressStringDidUpdateNotification object:self];
     }];
+}
+
+- (NSString *)addressString
+{
+    if ([self.mapItem.placemark.name length] > 0) {
+        return self.mapItem.placemark.name;
+    } else {
+        return @"Getting address...";
+    }
 }
 
 - (NSString *)durationString
