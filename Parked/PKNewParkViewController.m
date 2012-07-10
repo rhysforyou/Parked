@@ -149,4 +149,19 @@
     }
 }
 
+#pragma mark - Table View Delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath section] == 0) {
+        if ([indexPath row] == 1) {
+            return 70.0;
+        } else {
+            return 44.0;
+        }
+    } else {
+        return 100.0;
+    }
+}
+
 @end
