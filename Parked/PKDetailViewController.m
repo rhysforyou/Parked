@@ -54,6 +54,9 @@
                                              selector:@selector(didBecomeActive) 
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    [self.navigationController.toolbar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

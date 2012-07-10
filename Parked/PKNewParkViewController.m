@@ -45,6 +45,9 @@
     [locationManager startUpdatingLocation];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     self.clearsSelectionOnViewWillAppear = YES;
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blueColor]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
