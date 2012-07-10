@@ -138,7 +138,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.83507484200000004" green="0.83517730239999999" blue="0.83500462769999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <mapView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="kNg-vz-h0t">
+                        <mapView key="tableHeaderView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" showsUserLocation="YES" id="kNg-vz-h0t">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         </mapView>
@@ -160,10 +160,16 @@
                                         <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="fx5-53-6Kf">
                                             <rect key="frame" x="216" y="8" width="79" height="27"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="toggleDuration:" destination="an4-0m-kBe" eventType="valueChanged" id="z2B-CR-NQg"/>
+                                            </connections>
                                         </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="accessoryView" destination="fx5-53-6Kf" id="3Rz-9n-8HI"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="durationLengthCell" rowHeight="70" id="00K-hv-95i">
                                 <rect key="frame" x="0.0" y="241" width="320" height="70"/>
@@ -203,6 +209,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="DsO-6G-JXN" kind="push" id="SjH-tH-rfX"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="durationAlarmCell" textLabel="5mU-MT-Ugo" detailTextLabel="T5R-0s-rMY" style="IBUITableViewCellStyleValue1" id="4rh-OO-GNV">
                                 <rect key="frame" x="0.0" y="311" width="320" height="44"/>
@@ -257,10 +266,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="kNg-vz-h0t" id="Ofg-TX-cu8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shi-JI-nz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="935" y="74"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Obc-B6-mhS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OhN-Cr-a4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DsO-6G-JXN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="f6T-NU-s5V"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1389" y="74"/>
         </scene>
         <!--Map View Controller - Map-->
         <scene sceneID="3PC-8t-zjO">
@@ -313,37 +335,6 @@
         <image name="timer-bg.png" width="300" height="102"/>
         <image name="walk.png" width="14" height="27"/>
     </resources>
-    <classes>
-        <class className="PKDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clear:"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PKMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKMapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="centerOnCar:"/>
-                <relationship kind="action" name="centerOnUserLocation:"/>
-                <relationship kind="action" name="showWalkingDirections:"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="PKNewParkViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKNewParkViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="notesView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

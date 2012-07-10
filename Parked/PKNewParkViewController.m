@@ -47,7 +47,8 @@
     self.clearsSelectionOnViewWillAppear = YES;
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
-    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blueColor]];
+    
+    [self.tableView setBackgroundColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:0.9 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -100,6 +101,11 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+- (IBAction)toggleDuration:(UISwitch *)sender {
+    self.parkingDetails.hasDuration = sender.on;
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 #pragma mark - Table View Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -111,7 +117,7 @@
 {
     switch (section) {
         case 0:
-            return 3;
+            return (self.parkingDetails.hasDuration ? 3 : 1);
             break;
         
         case 1:
@@ -126,27 +132,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell;
+    
     if ([indexPath section] == 0) {
-        switch ([indexPath row]) {
-            case 0:
-                return [tableView dequeueReusableCellWithIdentifier:@"durationToggleCell"];
-                break;
-            
-            case 1:
-                return [tableView dequeueReusableCellWithIdentifier:@"durationLengthCell"];
-                break;
-                
-            case 2:
-                return [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
-                break;
-                
-            default:
-                return [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
-                break;
+        NSInteger row = [indexPath row];
+        if (row == 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"durationToggleCell"];
+            [(UISwitch *)cell.accessoryView setOn:self.parkingDetails.hasDuration];
+        } else if (row == 1) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"durationLengthCell"];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
         }
     } else {
-        return [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
     }
+    
+    return cell;
 }
 
 #pragma mark - Table View Delegate
@@ -162,6 +164,11 @@
     } else {
         return 100.0;
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

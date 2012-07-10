@@ -25,6 +25,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 @synthesize mapItem = _mapItem;
 @synthesize timeInterval = _timeInterval;
 @synthesize hasAlert = _hasAlert;
+@synthesize hasDuration = _hasDuration;
 @synthesize alertOffset = _alertOffset;
 
 - (id)init

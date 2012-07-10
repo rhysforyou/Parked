@@ -19,6 +19,7 @@
 @property (strong, nonatomic) MKMapItem *mapItem;
 @property (nonatomic) NSTimeInterval timeInterval;
 @property (nonatomic) BOOL hasAlert;
+@property (nonatomic) BOOL hasDuration;
 @property (nonatomic) NSTimeInterval alertOffset;
 
 - (NSString *)durationString;

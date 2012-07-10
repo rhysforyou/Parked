@@ -16,7 +16,7 @@
 
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
-
+- (IBAction)toggleDuration:(UISwitch *)sender;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITextView *notesView;
