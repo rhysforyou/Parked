@@ -154,7 +154,7 @@
 				571381D31573745800CA5555 /* PKAppDelegate.h */,
 				571381D41573745800CA5555 /* PKAppDelegate.m */,
 				571381F31573747300CA5555 /* MainStoryboard.storyboard */,
-				57E0F25915A9AD7200E18B52 /* Controllers */,
+				57E0F25915A9AD7200E18B52 /* View Controllers */,
 				57E0F25C15A9AD8900E18B52 /* Models */,
 				57E0F25B15A9AD7F00E18B52 /* Views */,
 				57E0F25E15A9AE1300E18B52 /* Map Objects */,
@@ -192,7 +192,7 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		57E0F25915A9AD7200E18B52 /* Controllers */ = {
+		57E0F25915A9AD7200E18B52 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				571381F51573755800CA5555 /* PKDetailViewController.h */,
@@ -204,7 +204,7 @@
 				577A083F1576011100C6D8B3 /* PKDurationPickerViewController.h */,
 				577A08401576011100C6D8B3 /* PKDurationPickerViewController.m */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		57E0F25B15A9AD7F00E18B52 /* Views */ = {

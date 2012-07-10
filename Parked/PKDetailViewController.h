@@ -12,7 +12,9 @@
 
 @class PKParkingDetails;
 
-@interface PKDetailViewController : UIViewController
+@interface PKDetailViewController : UIViewController <UIActionSheetDelegate>
+
+- (IBAction)clear:(id)sender;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UILabel *locationLabel;

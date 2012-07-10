@@ -129,6 +129,39 @@
     self.locationLabel.text = self.parkingDetails.addressString;
 }
 
+#pragma mark - Interface Builder Actions
+
+- (IBAction)clear:(id)sender
+{
+    UIActionSheet *confirmationSheet = [[UIActionSheet alloc] initWithTitle:@"Delete all parking details?"
+                                                                   delegate:self
+                                                          cancelButtonTitle:@"Cancel"
+                                                     destructiveButtonTitle:@"Clear"
+                                                          otherButtonTitles:nil];
+    
+    [confirmationSheet showInView:self.view];
+    
+
+}
+
+#pragma mark - Action Sheet Delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) { // Clear
+        self.parkingDetails = nil;
+        NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
+        [[NSFileManager defaultManager] removeItemAtPath:archivePath error:nil];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) { // Clear
+        [self performSegueWithIdentifier:@"newPark" sender:self];
+    }
+}
+
 #pragma mark - Utility Methods
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated
