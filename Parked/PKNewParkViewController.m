@@ -151,6 +151,15 @@
     return cell;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 1) {
+        return @"Notes";
+    } else {
+        return nil;
+    }
+}
+
 #pragma mark - Table View Delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
