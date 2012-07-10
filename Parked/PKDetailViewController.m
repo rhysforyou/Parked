@@ -16,6 +16,7 @@
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) PKAnnotation *annotation;
 @property (strong, nonatomic) NSTimer *timer;
+@property BOOL showNewParkView;
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated;
 - (void)setTimerWithInterval:(NSTimeInterval)interval;
@@ -37,6 +38,7 @@
 @synthesize timerView = _timerView;
 @synthesize geocoder = _geocoder;
 @synthesize timer;
+@synthesize showNewParkView;
 
 #pragma mark - View Lifecycle
 
@@ -95,6 +97,11 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    if (self.showNewParkView) {
+        self.showNewParkView = NO;
+        [self performSegueWithIdentifier:@"newPark" sender:self];
+    }
+    
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
     if (self.parkingDetails.hasAlert) [self postLocalNotification];
@@ -123,7 +130,7 @@
     NSTimeInterval timeSinceExpiration = [[NSDate date] timeIntervalSince1970] - expirationTime;
     
     if (timeSinceExpiration > 15 * 60 || self.parkingDetails == Nil) { // 15 minutes
-        [self performSegueWithIdentifier:@"newPark" sender:self];
+        self.showNewParkView = YES;
     }
 }
 
