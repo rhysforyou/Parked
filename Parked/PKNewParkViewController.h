@@ -12,7 +12,7 @@
 
 @class PKParkingDetails;
 
-@interface PKNewParkViewController : UITableViewController <CLLocationManagerDelegate>
+@interface PKNewParkViewController : UITableViewController <CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;

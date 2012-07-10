@@ -100,4 +100,53 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark - Table View Data Source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return 3;
+            break;
+        
+        case 1:
+            return 1;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath section] == 0) {
+        switch ([indexPath row]) {
+            case 0:
+                return [tableView dequeueReusableCellWithIdentifier:@"durationToggleCell"];
+                break;
+            
+            case 1:
+                return [tableView dequeueReusableCellWithIdentifier:@"durationLengthCell"];
+                break;
+                
+            case 2:
+                return [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
+                break;
+                
+            default:
+                return [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
+                break;
+        }
+    } else {
+        return [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
+    }
+}
+
 @end
