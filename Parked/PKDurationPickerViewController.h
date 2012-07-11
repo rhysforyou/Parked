@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PKDurationPickerViewController : UITableViewController
+@class PKParkingDetails;
+
+@interface PKDurationPickerViewController : UITableViewController <UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *expirationLabel;
+@property (strong, nonatomic) PKParkingDetails *parkingDetails;
 
 @end

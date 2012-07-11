@@ -37,6 +37,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
         self.timeInterval = 3600;
         self.hasAlert = false;
         self.alertOffset = 1800;
+        self.startTime = [NSDate date];
     }
     
     return self;
@@ -75,6 +76,20 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 - (NSString *)durationString
 {
     return [self descriptionOfTimeInterval:self.timeInterval];
+}
+
+- (NSString *)durationExpirationString
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    
+    NSDate *finishTime = [self.startTime dateByAddingTimeInterval:self.timeInterval];
+    
+    NSLog(@"%@", finishTime);
+    
+    return [dateFormatter stringFromDate:finishTime];
 }
 
 - (NSString *)alertDurationString
@@ -118,8 +133,10 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
     [aCoder encodeObject:self.location forKey:@"PKParkingDetailsLocation"];
     [aCoder encodeObject:self.notes forKey:@"PKParkingDetailsNote"];
     [aCoder encodeObject:self.startTime forKey:@"PKParkingDetailsStartTime"];
+    [aCoder encodeObject:self.mapItem forKey:@"PKParkingDetailsMapItem"];
     [aCoder encodeDouble:self.timeInterval forKey:@"PKParkingDetailsTimeInterval"];
     [aCoder encodeBool:self.hasAlert forKey:@"PKParkingDetailsHasAlert"];
+    [aCoder encodeBool:self.hasDuration forKey:@"PKParkingDetailsHasDuration"];
     [aCoder encodeDouble:self.alertOffset forKey:@"PKParkingDetailsAlertOffset"];
 }
 
@@ -130,8 +147,10 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
     self.location = [aDecoder decodeObjectForKey:@"PKParkingDetailsLocation"];
     self.notes = [aDecoder decodeObjectForKey:@"PKParkingDetailsNote"];
     self.startTime = [aDecoder decodeObjectForKey:@"PKParkingDetailsStartTime"];
+    self.mapItem = [aDecoder decodeObjectForKey:@"PKParkingDetailsMapItem"];
     self.timeInterval = [aDecoder decodeDoubleForKey:@"PKParkingDetailsTimeInterval"];
     self.hasAlert = [aDecoder decodeBoolForKey:@"PKParkingDetailsHasAlert"];
+    self.hasDuration = [aDecoder decodeBoolForKey:@"PKParkingDetailsHasDuration"];
     self.alertOffset = [aDecoder decodeDoubleForKey:@"PKParkingDetailsAlertOffset"];
     
     return self;

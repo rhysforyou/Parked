@@ -62,22 +62,17 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - Location Manager Delegate
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self.parkingDetails.location = newLocation;
-    
-    MKCoordinateRegion coordinateRegion;
-    coordinateRegion.center = newLocation.coordinate;
-    // Longitude varies based on latitude, so it's best to just use latitude for the span
-    coordinateRegion.span = MKCoordinateSpanMake(0.002, 0.0);
-    coordinateRegion = [self.mapView regionThatFits:coordinateRegion];
-    [self.mapView setRegion:coordinateRegion animated:YES];
+    if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
+        PKDurationPickerViewController *destinationVC = segue.destinationViewController;
+        destinationVC.parkingDetails = self.parkingDetails;
+    }
 }
 
+#pragma mark - Interface Builder Actions
+
 - (IBAction)save:(id)sender {
-    self.parkingDetails.startTime = [NSDate date];
     NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
     [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
     [self dismissModalViewControllerAnimated:YES];
@@ -90,6 +85,20 @@
 - (IBAction)toggleDuration:(UISwitch *)sender {
     self.parkingDetails.hasDuration = sender.on;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - Location Manager Delegate
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    self.parkingDetails.location = newLocation;
+    
+    MKCoordinateRegion coordinateRegion;
+    coordinateRegion.center = newLocation.coordinate;
+    // Longitude varies based on latitude, so it's best to just use latitude for the span
+    coordinateRegion.span = MKCoordinateSpanMake(0.002, 0.0);
+    coordinateRegion = [self.mapView regionThatFits:coordinateRegion];
+    [self.mapView setRegion:coordinateRegion animated:YES];
 }
 
 #pragma mark - Table View Data Source
