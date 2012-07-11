@@ -19,8 +19,6 @@
 - (IBAction)toggleDuration:(UISwitch *)sender;
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) IBOutlet UITextView *notesView;
-@property (strong, nonatomic) IBOutlet UILabel *durationLabel;
 @property (strong, nonatomic) PKParkingDetails *parkingDetails;
 
 @end

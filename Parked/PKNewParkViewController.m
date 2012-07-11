@@ -21,8 +21,6 @@
 
 @synthesize parkingDetails;
 @synthesize mapView;
-@synthesize notesView;
-@synthesize durationLabel;
 @synthesize locationManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -56,7 +54,6 @@
     if (!self.parkingDetails) {
         self.parkingDetails = [[PKParkingDetails alloc] init];
     }
-    self.durationLabel.text = [self.parkingDetails durationString];
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
 }
 
@@ -79,19 +76,8 @@
     [self.mapView setRegion:coordinateRegion animated:YES];
 }
 
-#pragma mark - Storyboard
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
-        PKDurationPickerViewController *durationVC = (PKDurationPickerViewController *)[segue destinationViewController];
-        durationVC.parkingDetails = self.parkingDetails;
-    }
-}
-
 - (IBAction)save:(id)sender {
     self.parkingDetails.startTime = [NSDate date];
-    self.parkingDetails.notes = self.notesView.text;
     NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
     [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
     [self dismissModalViewControllerAnimated:YES];
