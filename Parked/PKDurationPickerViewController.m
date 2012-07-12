@@ -52,6 +52,8 @@ typedef enum {
          forControlEvents:UIControlEventValueChanged];
     
     self.datePicker = datePicker;
+    
+    [self.tableView setBackgroundColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:0.9 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

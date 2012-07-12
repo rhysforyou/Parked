@@ -46,6 +46,8 @@
     self.clearsSelectionOnViewWillAppear = YES;
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor colorWithHue:0 saturation:0 brightness:0.9 alpha:0]];
+    [self.navigationItem.rightBarButtonItem setTintColor:[UIColor colorWithHue:0.61 saturation:0.3 brightness:0.8 alpha:0]];
     
     [self.tableView setBackgroundColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:0.9 alpha:1.0]];
 }
