@@ -63,12 +63,22 @@
     
     self.mapView.layer.borderWidth = 5.0;
     self.mapView.layer.borderColor = [[UIColor whiteColor] CGColor];
-//    TODO: Figure out how to make this work on iOS 5
-//    self.mapView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
-//    self.mapView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.mapView.layer.shadowRadius = 5.0;
-//    self.mapView.layer.shadowOpacity = 0.2;
-//    self.mapView.clipsToBounds
+
+    CALayer *shadowLayer        = [[CALayer alloc] init];
+    
+    shadowLayer.shadowColor     = [[UIColor blackColor] CGColor];
+    shadowLayer.backgroundColor = [[UIColor whiteColor] CGColor];
+    shadowLayer.shadowOffset    = CGSizeMake(0.0, 5.0);
+    shadowLayer.shadowRadius    = 5.0;
+    shadowLayer.shadowOpacity   = 0.2;
+    
+    shadowLayer.masksToBounds   = NO;
+    
+    CGRect shadowLayerFrame     = self.mapView.layer.frame;
+    shadowLayerFrame.origin.y  -= self.navigationController.navigationBar.frame.size.height;
+    shadowLayer.frame           = shadowLayerFrame;
+
+    [self.view.layer insertSublayer:shadowLayer below:self.mapView.layer];
 }
 
 - (void)viewWillAppear:(BOOL)animated
