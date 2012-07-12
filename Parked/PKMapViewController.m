@@ -19,14 +19,6 @@
 @synthesize parkingDetails;
 @synthesize annotation;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.navigationController setToolbarHidden:NO animated:animated];
