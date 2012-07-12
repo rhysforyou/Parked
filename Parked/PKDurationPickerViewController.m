@@ -58,6 +58,8 @@ typedef NS_ENUM(NSInteger, PKDurationPickerMode) {
 {
     self.durationLabel.text = [self.parkingDetails durationString];
     self.expirationLabel.text = [self.parkingDetails durationExpirationString];
+    
+    [self refreshDatePicker];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,17 +85,31 @@ typedef NS_ENUM(NSInteger, PKDurationPickerMode) {
     self.expirationLabel.text = [self.parkingDetails durationExpirationString];
 }
 
+#pragma mark - Utility methdos
+
+- (void)refreshDatePicker
+{
+    if (self.pickerMode == PKDurationPickerModeDuration) {
+        [self.datePicker setDatePickerMode:UIDatePickerModeCountDownTimer];
+        [self.datePicker setCountDownDuration:self.parkingDetails.timeInterval];
+    } else if (self.pickerMode == PKDurationPickerModeExpirationTime) {
+        [self.datePicker setDatePickerMode:UIDatePickerModeTime];
+        NSDate *finishDate = [self.parkingDetails.startTime dateByAddingTimeInterval:self.parkingDetails.timeInterval];
+        [self.datePicker setDate:finishDate];
+    }
+}
+
 #pragma mark - Table View Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath row] == 0) {
         self.pickerMode = PKDurationPickerModeDuration;
-        [self.datePicker setDatePickerMode:UIDatePickerModeCountDownTimer];
     } else {
         self.pickerMode = PKDurationPickerModeExpirationTime;
-        [self.datePicker setDatePickerMode:UIDatePickerModeTime];
     }
+    
+    [self refreshDatePicker];
 }
 
 @end
