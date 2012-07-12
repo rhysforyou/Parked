@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDate *startTime;
 @property (readonly) NSString *addressString;
-@property (strong, nonatomic) MKMapItem *mapItem;
+@property (strong, nonatomic) MKPlacemark *placemark;
 @property (nonatomic) NSTimeInterval timeInterval;
 @property (nonatomic) BOOL hasAlert;
 @property (nonatomic) BOOL hasDuration;

@@ -9,10 +9,10 @@
 #import "PKDurationPickerViewController.h"
 #import "PKParkingDetails.h"
 
-typedef NS_ENUM(NSInteger, PKDurationPickerMode) {
+typedef enum {
     PKDurationPickerModeDuration,
     PKDurationPickerModeExpirationTime
-};
+} PKDurationPickerMode;
 
 @interface PKDurationPickerViewController ()
 

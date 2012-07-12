@@ -79,11 +79,11 @@
     if ([self.parkingDetails.notes length] > 0) {
         [self.noteTextView setText:self.parkingDetails.notes];
         [self.noteTextView setTextColor:[UIColor blackColor]];
-        [self.noteTextView setTextAlignment:NSTextAlignmentNatural];
+        [self.noteTextView setTextAlignment:UITextAlignmentLeft];
     } else {
         [self.noteTextView setText:@"(no notes)"];
         [self.noteTextView setTextColor:[UIColor lightGrayColor]];
-        [self.noteTextView setTextAlignment:NSTextAlignmentCenter];
+        [self.noteTextView setTextAlignment:UITextAlignmentCenter];
     }
     
     [self setTimerWithInterval:self.parkingDetails.timeInterval];
