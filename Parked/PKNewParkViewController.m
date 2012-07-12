@@ -11,6 +11,7 @@
 #import "PKDurationPickerViewController.h"
 #import "PKParkingDetails.h"
 #import "PKDurationCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PKNewParkViewController ()
 
@@ -50,6 +51,14 @@
     [self.navigationItem.rightBarButtonItem setTintColor:[UIColor colorWithHue:0.61 saturation:0.3 brightness:0.8 alpha:0]];
     
     [self.tableView setBackgroundColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:0.9 alpha:1.0]];
+    
+    self.mapView.layer.borderWidth = 5.0;
+    self.mapView.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    self.mapView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+//    self.mapView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.mapView.layer.shadowRadius = 5.0;
+//    self.mapView.layer.shadowOpacity = 0.2;
+//    self.mapView.clipsToBounds
 }
 
 - (void)viewWillAppear:(BOOL)animated

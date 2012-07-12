@@ -7,6 +7,7 @@
 //
 
 #import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/QuartzCore.h>
 #import "PKDetailViewController.h"
 #import "PKParkingDetails.h"
 #import "PKMapViewController.h"
@@ -59,6 +60,15 @@
     
     [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
     [self.navigationController.toolbar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    
+    self.mapView.layer.borderWidth = 5.0;
+    self.mapView.layer.borderColor = [[UIColor whiteColor] CGColor];
+//    TODO: Figure out how to make this work on iOS 5
+//    self.mapView.layer.shadowOffset = CGSizeMake(0.0, 0.0);
+//    self.mapView.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.mapView.layer.shadowRadius = 5.0;
+//    self.mapView.layer.shadowOpacity = 0.2;
+//    self.mapView.clipsToBounds
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -97,8 +107,6 @@
     } else {
         self.timerView.text = @"(no duration)";
     }
-    
-    NSLog(@"%@", self.parkingDetails.hasDuration ? @"Has Duration" : @"No Duration");
 }
 
 - (void)viewDidAppear:(BOOL)animated
