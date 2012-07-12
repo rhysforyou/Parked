@@ -10,6 +10,7 @@
 #import "PKDetailViewController.h"
 #import "PKDurationPickerViewController.h"
 #import "PKParkingDetails.h"
+#import "PKDurationCell.h"
 
 @interface PKNewParkViewController ()
 
@@ -136,6 +137,8 @@
             [(UISwitch *)cell.accessoryView setOn:self.parkingDetails.hasDuration];
         } else if (row == 1) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"durationLengthCell"];
+            [[(PKDurationCell *)cell durationLabel] setText:self.parkingDetails.durationString];
+            [[(PKDurationCell *)cell expirationLabel] setText:self.parkingDetails.durationExpirationString];
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
         }

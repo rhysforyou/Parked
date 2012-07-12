@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570815F115AE569100EFF682 /* PKDurationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 570815F015AE569100EFF682 /* PKDurationCell.m */; };
 		571381C51573745800CA5555 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571381C41573745800CA5555 /* UIKit.framework */; };
 		571381C71573745800CA5555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571381C61573745800CA5555 /* Foundation.framework */; };
 		571381C91573745800CA5555 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 571381C81573745800CA5555 /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570815EF15AE569100EFF682 /* PKDurationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKDurationCell.h; sourceTree = "<group>"; };
+		570815F015AE569100EFF682 /* PKDurationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDurationCell.m; sourceTree = "<group>"; };
 		571381C01573745800CA5555 /* Parked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		571381C41573745800CA5555 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		571381C61573745800CA5555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,8 @@
 			children = (
 				5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */,
 				5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */,
+				570815EF15AE569100EFF682 /* PKDurationCell.h */,
+				570815F015AE569100EFF682 /* PKDurationCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */,
 				5781BAC51581B1C6002C283B /* PKMapViewController.m in Sources */,
 				57BF3F2115AD835100E88943 /* PKDurationPickerViewController.m in Sources */,
+				570815F115AE569100EFF682 /* PKDurationCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

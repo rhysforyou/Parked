@@ -171,7 +171,7 @@
                                     <outlet property="accessoryView" destination="fx5-53-6Kf" id="3Rz-9n-8HI"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="durationLengthCell" rowHeight="70" id="00K-hv-95i">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="durationLengthCell" rowHeight="70" id="00K-hv-95i" customClass="PKDurationCell">
                                 <rect key="frame" x="0.0" y="241" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -193,14 +193,14 @@
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="2 hours" textAlignment="right" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="Y44-i8-D5x">
-                                            <rect key="frame" x="94" y="12" width="181" height="21"/>
+                                            <rect key="frame" x="89" y="12" width="181" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" text="2:30pm" textAlignment="right" adjustsFontSizeToFit="NO" autoshrinkMode="none" id="ekT-jo-BVj">
-                                            <rect key="frame" x="94" y="37" width="181" height="21"/>
+                                            <rect key="frame" x="89" y="37" width="181" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -210,6 +210,8 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
+                                    <outlet property="durationLabel" destination="Y44-i8-D5x" id="khh-Y1-RJ8"/>
+                                    <outlet property="expirationLabel" destination="ekT-jo-BVj" id="cb8-y5-i0o"/>
                                     <segue destination="BPK-dc-Que" kind="push" identifier="showDurationPicker" id="1Pv-mN-Sgr"/>
                                 </connections>
                             </tableViewCell>
@@ -413,6 +415,13 @@
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="timerView" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PKDurationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PKDurationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="expirationLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PKDurationPickerViewController" superclassName="UITableViewController">
