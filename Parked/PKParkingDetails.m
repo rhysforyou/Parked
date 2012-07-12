@@ -38,6 +38,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
         self.hasAlert = false;
         self.alertOffset = 1800;
         self.startTime = [NSDate date];
+        self.timeInterval = 3600;
     }
     
     return self;
