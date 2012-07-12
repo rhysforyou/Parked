@@ -76,6 +76,8 @@
 #pragma mark - Interface Builder Actions
 
 - (IBAction)save:(id)sender {
+    UITableViewCell *durationToggleCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    self.parkingDetails.hasDuration = [(UISwitch *)durationToggleCell.accessoryView isOn];
     NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
     [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
     [self dismissModalViewControllerAnimated:YES];

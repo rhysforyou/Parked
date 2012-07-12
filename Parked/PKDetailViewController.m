@@ -91,8 +91,14 @@
     // Center map on current location
     [self.mapView setCenterCoordinate:[self.parkingDetails.location coordinate]];
     
-    [self beginTimer];
-    [self updateTimer];
+    if (self.parkingDetails.hasDuration) {
+        [self beginTimer];
+        [self updateTimer];
+    } else {
+        self.timerView.text = @"(no duration)";
+    }
+    
+    NSLog(@"%@", self.parkingDetails.hasDuration ? @"Has Duration" : @"No Duration");
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -110,6 +116,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.timer invalidate];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -124,12 +131,15 @@
 
 - (void)didBecomeActive
 {
-    [self beginTimer];
+    if (self.parkingDetails.hasDuration) {
+        [self beginTimer];
+    }
     
     NSTimeInterval expirationTime = [self.parkingDetails.startTime timeIntervalSince1970] + self.parkingDetails.timeInterval;
     NSTimeInterval timeSinceExpiration = [[NSDate date] timeIntervalSince1970] - expirationTime;
     
-    if (timeSinceExpiration > 15 * 60 || self.parkingDetails == Nil) { // 15 minutes
+    if ((timeSinceExpiration > 15 * 60 && self.parkingDetails.hasDuration)
+        || !self.parkingDetails) { // 15 minutes
         self.showNewParkView = YES;
     }
 }
