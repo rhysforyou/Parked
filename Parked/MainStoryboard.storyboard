@@ -263,7 +263,7 @@
                                 <action selector="cancel:" destination="an4-0m-kBe" id="HAX-Oq-qVt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="21G-ev-HJv">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="21G-ev-HJv">
                             <connections>
                                 <action selector="save:" destination="an4-0m-kBe" id="vtM-kS-k6e"/>
                             </connections>
