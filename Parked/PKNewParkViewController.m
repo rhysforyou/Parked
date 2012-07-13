@@ -9,6 +9,7 @@
 #import "PKNewParkViewController.h"
 #import "PKDetailViewController.h"
 #import "PKDurationPickerViewController.h"
+#import "PKAlarmPickerViewController.h"
 #import "PKParkingDetails.h"
 #import "PKDurationCell.h"
 #import <QuartzCore/QuartzCore.h>
@@ -78,6 +79,8 @@
         self.parkingDetails = [[PKParkingDetails alloc] init];
     }
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
+    
+    [self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -89,6 +92,9 @@
 {
     if ([segue.identifier isEqualToString:@"showDurationPicker"]) {
         PKDurationPickerViewController *destinationVC = segue.destinationViewController;
+        destinationVC.parkingDetails = self.parkingDetails;
+    } else if ([segue.identifier isEqualToString:@"showAlarmPicker"]) {
+        PKAlarmPickerViewController *destinationVC = segue.destinationViewController;
         destinationVC.parkingDetails = self.parkingDetails;
     }
 }
@@ -165,6 +171,7 @@
             [[(PKDurationCell *)cell expirationLabel] setText:self.parkingDetails.durationExpirationString];
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
+            [(UILabel *)cell.detailTextLabel setText:self.parkingDetails.alertDurationString];
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];

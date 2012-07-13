@@ -38,7 +38,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
         self.hasAlert = false;
         self.alertOffset = 1800;
         self.startTime = [NSDate date];
-        self.timeInterval = 3600;
+        self.timeInterval = 7200; // 2 hours
     }
     
     return self;
@@ -93,7 +93,11 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 
 - (NSString *)alertDurationString
 {
-    return [self descriptionOfTimeInterval:self.alertOffset];
+    if (self.hasAlert) {
+        return [[self descriptionOfTimeInterval:self.alertOffset] stringByAppendingString:@" before"];
+    } else {
+        return @"Not set";
+    }
 }
 
 - (NSString *)descriptionOfTimeInterval:(NSTimeInterval)timeInterval
