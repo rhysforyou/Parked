@@ -17,7 +17,7 @@
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (strong, nonatomic) PKAnnotation *annotation;
 @property (strong, nonatomic) NSTimer *timer;
-@property BOOL showNewParkView;
+@property (strong, nonatomic) UIImageView *noDataView;
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated;
 - (void)setTimerWithInterval:(NSTimeInterval)interval;
@@ -38,8 +38,8 @@
 @synthesize noteTextView = _noteTextView;
 @synthesize timerView = _timerView;
 @synthesize geocoder = _geocoder;
-@synthesize timer;
-@synthesize showNewParkView;
+@synthesize timer = _timer;
+@synthesize noDataView = _noDataView;
 
 #pragma mark - View Lifecycle
 
@@ -79,6 +79,11 @@
     shadowLayer.frame           = shadowLayerFrame;
 
     [self.view.layer insertSublayer:shadowLayer below:self.mapView.layer];
+    
+    self.noDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no-parking-details"]];
+    self.noDataView.frame = CGRectMake(0.0, 0.0, 320.0, 416.0);
+    self.noDataView.hidden = YES;
+    [self.view addSubview:self.noDataView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -117,15 +122,18 @@
     } else {
         self.timerView.text = @"(no duration)";
     }
+    
+    if (self.parkingDetails == nil) {
+        self.noDataView.hidden = NO;
+        self.navigationItem.leftBarButtonItem.enabled = NO;
+    } else {
+        self.noDataView.hidden = YES;
+        self.navigationItem.leftBarButtonItem.enabled = YES;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
-{
-    if (self.showNewParkView) {
-        self.showNewParkView = NO;
-        [self performSegueWithIdentifier:@"newPark" sender:self];
-    }
-    
+{   
     [self centerMapOnLocation:self.parkingDetails.location animated:YES];
     
     if (self.parkingDetails.hasAlert) [self postLocalNotification];
@@ -152,14 +160,6 @@
     if (self.parkingDetails.hasDuration) {
         [self beginTimer];
     }
-    
-    NSTimeInterval expirationTime = [self.parkingDetails.startTime timeIntervalSince1970] + self.parkingDetails.timeInterval;
-    NSTimeInterval timeSinceExpiration = [[NSDate date] timeIntervalSince1970] - expirationTime;
-    
-    if ((timeSinceExpiration > 15 * 60 && self.parkingDetails.hasDuration)
-        || !self.parkingDetails) { // 15 minutes
-        self.showNewParkView = YES;
-    }
 }
 
 - (void)updateAddress
@@ -178,8 +178,6 @@
                                                           otherButtonTitles:nil];
     
     [confirmationSheet showInView:self.view];
-    
-
 }
 
 #pragma mark - Action Sheet Delegate
@@ -196,7 +194,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) { // Clear
-        [self performSegueWithIdentifier:@"newPark" sender:self];
+        self.noDataView.hidden = NO;
+        self.navigationItem.leftBarButtonItem.enabled = NO;
     }
 }
 
