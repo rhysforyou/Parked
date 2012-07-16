@@ -75,6 +75,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cxz-bq-757">
                                 <rect key="frame" x="267" y="107" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="Expand the map to fill the screen" label="Fullscreen"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="full-screen-button.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,7 +281,7 @@
                                 <action selector="cancel:" destination="an4-0m-kBe" id="HAX-Oq-qVt"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="21G-ev-HJv">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="21G-ev-HJv">
                             <connections>
                                 <action selector="save:" destination="an4-0m-kBe" id="vtM-kS-k6e"/>
                             </connections>
@@ -383,7 +384,7 @@
                     </mapView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="c86-qL-Z1t"/>
-                        <barButtonItem image="pin.png" style="plain" id="no1-Jm-55C">
+                        <barButtonItem image="car.png" style="plain" id="no1-Jm-55C">
                             <connections>
                                 <action selector="centerOnCar:" destination="8nm-Nh-EVi" id="tao-p1-QZs"/>
                             </connections>
@@ -394,6 +395,8 @@
                                 <action selector="centerOnUserLocation:" destination="8nm-Nh-EVi" id="hPC-r6-BHi"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vVv-e2-iaW"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="pBq-Yh-QKK"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="dBm-nF-jpA"/>
                         <barButtonItem image="walk.png" style="plain" id="HKx-dW-796">
                             <connections>
@@ -515,15 +518,15 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1542" y="699"/>
+            <point key="canvasLocation" x="1542" y="678"/>
         </scene>
     </scenes>
     <resources>
+        <image name="car.png" width="22" height="19"/>
         <image name="full-screen-button.png" width="46" height="46"/>
         <image name="location.png" width="20" height="20"/>
         <image name="map-pin.png" width="11" height="20"/>
         <image name="note-sheet.png" width="320" height="110"/>
-        <image name="pin.png" width="10" height="20"/>
         <image name="timer-bg.png" width="300" height="102"/>
         <image name="walk.png" width="14" height="27"/>
     </resources>
