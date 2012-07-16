@@ -64,4 +64,15 @@
     self.timeLabel.text = [self.parkingDetails alertDurationString];
 }
 
+#pragma mark - Table View Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath section] == 1) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        self.parkingDetails.hasAlert = NO;
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 @end

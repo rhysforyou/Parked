@@ -10,7 +10,7 @@
 
 @class PKParkingDetails;
 
-@interface PKAlarmPickerViewController : UITableViewController
+@interface PKAlarmPickerViewController : UITableViewController <UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @property (strong, nonatomic) PKParkingDetails *parkingDetails;
