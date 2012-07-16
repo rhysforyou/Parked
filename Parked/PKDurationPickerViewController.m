@@ -94,10 +94,12 @@ typedef enum {
     if (self.pickerMode == PKDurationPickerModeDuration) {
         [self.datePicker setDatePickerMode:UIDatePickerModeCountDownTimer];
         [self.datePicker setCountDownDuration:self.parkingDetails.timeInterval];
+        [self.datePicker setMinuteInterval:5];
     } else if (self.pickerMode == PKDurationPickerModeExpirationTime) {
         [self.datePicker setDatePickerMode:UIDatePickerModeTime];
         NSDate *finishDate = [self.parkingDetails.startTime dateByAddingTimeInterval:self.parkingDetails.timeInterval];
         [self.datePicker setDate:finishDate];
+        [self.datePicker setMinuteInterval:1];
     }
 }
 
