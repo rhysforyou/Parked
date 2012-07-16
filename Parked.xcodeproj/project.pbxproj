@@ -121,7 +121,7 @@
 		57BF3F2015AD835100E88943 /* PKDurationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKDurationPickerViewController.m; sourceTree = "<group>"; };
 		57E7BEBE15B4057D00CC42B5 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 		57E7BEBF15B4057D00CC42B5 /* car@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "car@2x.png"; sourceTree = "<group>"; };
-		57E7BEC215B432FE00CC42B5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		57E7BEC215B432FE00CC42B5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		57EE047E15AEE48400F61E09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -145,7 +145,6 @@
 		571381B51573745700CA5555 = {
 			isa = PBXGroup;
 			children = (
-				57E7BEC215B432FE00CC42B5 /* Settings.bundle */,
 				571381CA1573745800CA5555 /* Parked */,
 				571381C31573745800CA5555 /* Frameworks */,
 				571381C11573745800CA5555 /* Products */,
@@ -181,6 +180,7 @@
 				571381D31573745800CA5555 /* PKAppDelegate.h */,
 				571381D41573745800CA5555 /* PKAppDelegate.m */,
 				571381F31573747300CA5555 /* MainStoryboard.storyboard */,
+				57E7BEC215B432FE00CC42B5 /* Settings.bundle */,
 				57E0F25915A9AD7200E18B52 /* View Controllers */,
 				57E0F25C15A9AD8900E18B52 /* Models */,
 				57E0F25B15A9AD7F00E18B52 /* Views */,
