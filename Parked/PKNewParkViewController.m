@@ -10,6 +10,7 @@
 #import "PKDetailViewController.h"
 #import "PKDurationPickerViewController.h"
 #import "PKAlarmPickerViewController.h"
+#import "PKNoteEditorViewController.h"
 #import "PKParkingDetails.h"
 #import "PKDurationCell.h"
 #import <QuartzCore/QuartzCore.h>
@@ -95,6 +96,9 @@
         destinationVC.parkingDetails = self.parkingDetails;
     } else if ([segue.identifier isEqualToString:@"showAlarmPicker"]) {
         PKAlarmPickerViewController *destinationVC = segue.destinationViewController;
+        destinationVC.parkingDetails = self.parkingDetails;
+    } else if ([segue.identifier isEqualToString:@"showNoteEditor"]) {
+        PKNoteEditorViewController *destinationVC = segue.destinationViewController;
         destinationVC.parkingDetails = self.parkingDetails;
     }
 }

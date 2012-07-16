@@ -125,7 +125,7 @@
     
     if (self.parkingDetails == nil) {
         self.noDataView.hidden = NO;
-        self.navigationItem.leftBarButtonItem.enabled = NO;
+        self.navigationItem.leftBarButtonItem .enabled = NO;
     } else {
         self.noDataView.hidden = YES;
         self.navigationItem.leftBarButtonItem.enabled = YES;
