@@ -94,7 +94,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 - (NSString *)alertDurationString
 {
     if (self.hasAlert) {
-        return [[self descriptionOfTimeInterval:self.alertOffset] stringByAppendingString:@" before"];
+        return [self descriptionOfTimeInterval:self.alertOffset];
     } else {
         return @"Not set";
     }

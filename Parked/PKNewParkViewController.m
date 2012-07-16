@@ -176,7 +176,8 @@
             [[(PKDurationCell *)cell expirationLabel] setText:self.parkingDetails.durationExpirationString];
         } else {
             cell = [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
-            [(UILabel *)cell.detailTextLabel setText:self.parkingDetails.alertDurationString];
+            NSString *alertDurationString = [self.parkingDetails.alertDurationString stringByAppendingString:@" before"];
+            [(UILabel *)cell.detailTextLabel setText:alertDurationString];
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];

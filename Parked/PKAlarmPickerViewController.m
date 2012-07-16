@@ -53,7 +53,7 @@
         self.parkingDetails.alertOffset = 1800;
     }
     
-    self.timeLabel.text = [self.parkingDetails alertDurationString];
+    self.timeLabel.text = [[self.parkingDetails alertDurationString] stringByAppendingString:@" before"];
     
     [self.datePicker setCountDownDuration:self.parkingDetails.alertOffset];
 }
