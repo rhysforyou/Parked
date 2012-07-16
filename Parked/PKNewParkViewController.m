@@ -13,6 +13,7 @@
 #import "PKNoteEditorViewController.h"
 #import "PKParkingDetails.h"
 #import "PKDurationCell.h"
+#import "PKNotesCell.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface PKNewParkViewController ()
@@ -179,6 +180,10 @@
         }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"notesCell"];
+        
+        UILabel *notesView = [(PKNotesCell *)cell notesView];
+        notesView.text = self.parkingDetails.notes;
+        [notesView sizeToFit];
     }
     
     return cell;
@@ -204,7 +209,8 @@
             return 44.0;
         }
     } else {
-        return 100.0;
+        return 110.0;
+        
     }
 }
 

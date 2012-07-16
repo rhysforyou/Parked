@@ -28,6 +28,7 @@
 		57260DA415A0718100ADA42E /* full-screen-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA215A0718100ADA42E /* full-screen-button.png */; };
 		57260DA515A0718100ADA42E /* full-screen-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57260DA315A0718100ADA42E /* full-screen-button@2x.png */; };
 		572FA0A015B39F99001E2966 /* PKNoteEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572FA09F15B39F99001E2966 /* PKNoteEditorViewController.m */; };
+		572FA0A415B3B231001E2966 /* PKNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572FA0A315B3B231001E2966 /* PKNotesCell.m */; };
 		5735D954157B929600BF09D8 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */; };
 		5735D960157C90AF00BF09D8 /* timer-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */; };
 		5735D961157C90AF00BF09D8 /* timer-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5735D95F157C90AF00BF09D8 /* timer-bg.png */; };
@@ -85,8 +86,10 @@
 		571C38AF1580BFFE00C5C093 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		57260DA215A0718100ADA42E /* full-screen-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full-screen-button.png"; sourceTree = "<group>"; };
 		57260DA315A0718100ADA42E /* full-screen-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "full-screen-button@2x.png"; sourceTree = "<group>"; };
-		572FA09E15B39F99001E2966 /* PKNoteEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNoteEditorViewController.h; sourceTree = "<group>"; };
-		572FA09F15B39F99001E2966 /* PKNoteEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNoteEditorViewController.m; sourceTree = "<group>"; };
+		572FA09E15B39F99001E2966 /* PKNoteEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PKNoteEditorViewController.h; path = ../PKNoteEditorViewController.h; sourceTree = "<group>"; };
+		572FA09F15B39F99001E2966 /* PKNoteEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PKNoteEditorViewController.m; path = ../PKNoteEditorViewController.m; sourceTree = "<group>"; };
+		572FA0A215B3B231001E2966 /* PKNotesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PKNotesCell.h; sourceTree = "<group>"; };
+		572FA0A315B3B231001E2966 /* PKNotesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PKNotesCell.m; sourceTree = "<group>"; };
 		5735D952157B929600BF09D8 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
 		5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		5735D95E157C90AF00BF09D8 /* timer-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer-bg@2x.png"; sourceTree = "<group>"; };
@@ -136,8 +139,6 @@
 		571381B51573745700CA5555 = {
 			isa = PBXGroup;
 			children = (
-				572FA09E15B39F99001E2966 /* PKNoteEditorViewController.h */,
-				572FA09F15B39F99001E2966 /* PKNoteEditorViewController.m */,
 				571381CA1573745800CA5555 /* Parked */,
 				571381C31573745800CA5555 /* Frameworks */,
 				571381C11573745800CA5555 /* Products */,
@@ -226,6 +227,8 @@
 				57BF3F2015AD835100E88943 /* PKDurationPickerViewController.m */,
 				5719796715AFD28E00E88BF7 /* PKAlarmPickerViewController.h */,
 				5719796815AFD28E00E88BF7 /* PKAlarmPickerViewController.m */,
+				572FA09E15B39F99001E2966 /* PKNoteEditorViewController.h */,
+				572FA09F15B39F99001E2966 /* PKNoteEditorViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -237,6 +240,8 @@
 				5735D953157B929600BF09D8 /* TPKeyboardAvoidingTableView.m */,
 				570815EF15AE569100EFF682 /* PKDurationCell.h */,
 				570815F015AE569100EFF682 /* PKDurationCell.m */,
+				572FA0A215B3B231001E2966 /* PKNotesCell.h */,
+				572FA0A315B3B231001E2966 /* PKNotesCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				570815F115AE569100EFF682 /* PKDurationCell.m in Sources */,
 				5719796915AFD28E00E88BF7 /* PKAlarmPickerViewController.m in Sources */,
 				572FA0A015B39F99001E2966 /* PKNoteEditorViewController.m in Sources */,
+				572FA0A415B3B231001E2966 /* PKNotesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

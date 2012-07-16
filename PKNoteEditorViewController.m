@@ -26,7 +26,7 @@
                                                  name:UIKeyboardDidShowNotification
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(didHideKeyboard:)
+                                             selector:@selector(didHideKeyboard)
                                                  name:UIKeyboardDidHideNotification
                                                object:nil];
     
