@@ -17,6 +17,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    [[UIToolbar appearance] setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
+    
+    [[UITableView appearance] setBackgroundColor:[UIColor colorWithHue:0.0 saturation:0.0 brightness:0.9 alpha:1.0]];
+    
     return YES;
 }
 

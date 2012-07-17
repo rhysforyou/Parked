@@ -58,9 +58,6 @@
                                                  name:UIApplicationDidBecomeActiveNotification
                                                object:nil];
     
-    [self.navigationController.navigationBar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
-    [self.navigationController.toolbar setTintColor:[UIColor colorWithHue:0.61 saturation:1 brightness:0.4 alpha:1]];
-    
     self.mapView.layer.borderWidth = 5.0;
     self.mapView.layer.borderColor = [[UIColor whiteColor] CGColor];
 
