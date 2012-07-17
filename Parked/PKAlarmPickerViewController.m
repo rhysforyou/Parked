@@ -9,9 +9,9 @@
 #import "PKAlarmPickerViewController.h"
 #import "PKParkingDetails.h"
 
-@interface PKAlarmPickerViewController ()
+#define DATE_PICKER_TAG 1
 
-@property (strong, nonatomic) UIDatePicker *datePicker;
+@interface PKAlarmPickerViewController ()
 
 @end
 
@@ -19,13 +19,13 @@
 
 @synthesize timeLabel;
 @synthesize parkingDetails;
-@synthesize datePicker = _datePicker;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker.tag = DATE_PICKER_TAG;
     
     CGFloat viewHeight   = self.view.bounds.size.height;
     CGFloat pickerHeight = datePicker.frame.size.height;
@@ -42,8 +42,6 @@
     [datePicker addTarget:self
                    action:@selector(datePickerChangedSelection:)
          forControlEvents:UIControlEventValueChanged];
-    
-    self.datePicker = datePicker;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,7 +53,8 @@
     
     self.timeLabel.text = [[self.parkingDetails alertDurationString] stringByAppendingString:@" before"];
     
-    [self.datePicker setCountDownDuration:self.parkingDetails.alertOffset];
+    UIDatePicker *datePicker = (UIDatePicker *)[self.view viewWithTag:DATE_PICKER_TAG];
+    [datePicker setCountDownDuration:self.parkingDetails.alertOffset];
 }
 
 - (void)datePickerChangedSelection:(UIDatePicker *)sender
