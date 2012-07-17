@@ -329,6 +329,7 @@
 			attributes = {
 				CLASSPREFIX = PK;
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Rhys Powell";
 			};
 			buildConfigurationList = 571381BA1573745700CA5555 /* Build configuration list for PBXProject "Parked" */;
 			compatibilityVersion = "Xcode 3.2";

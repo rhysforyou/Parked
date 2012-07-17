@@ -3,7 +3,7 @@
 //  Parked
 //
 //  Created by Rhys Powell on 8/06/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Rhys Powell. All rights reserved.
 //
 
 #import "PKMapViewController.h"
