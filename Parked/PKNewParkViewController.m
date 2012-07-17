@@ -171,6 +171,7 @@
             [[(PKDurationCell *)cell durationLabel] setText:self.parkingDetails.durationString];
             [[(PKDurationCell *)cell expirationLabel] setText:self.parkingDetails.durationExpirationString];
         } else {
+            // TODO: Fix the 'not set before' bug
             cell = [tableView dequeueReusableCellWithIdentifier:@"durationAlarmCell"];
             NSString *alertDurationString = [self.parkingDetails.alertDurationString stringByAppendingString:@" before"];
             [(UILabel *)cell.detailTextLabel setText:alertDurationString];
@@ -180,7 +181,10 @@
         
         UILabel *notesView = [(PKNotesCell *)cell notesView];
         notesView.text = self.parkingDetails.notes;
-        [notesView sizeToFit];
+        
+        CGRect textRect = cell.contentView.bounds;
+        textRect = CGRectInset(textRect, 10.0, 0.0);
+        notesView.bounds = [notesView textRectForBounds:textRect limitedToNumberOfLines:4];
     }
     
     return cell;
