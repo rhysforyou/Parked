@@ -31,11 +31,6 @@
     [self.navigationController setToolbarHidden:YES animated:animated];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 #pragma mark - Utility Methods
 
 - (void)centerMapOnLocation:(CLLocation *)location animated:(BOOL)animated
