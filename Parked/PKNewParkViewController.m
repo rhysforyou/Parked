@@ -40,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.clearsSelectionOnViewWillAppear = YES;
 
     // Get the user's location
     locationManager = [[CLLocationManager alloc] init];
@@ -76,7 +78,6 @@
     if (!self.parkingDetails) {
         self.parkingDetails = [[PKParkingDetails alloc] init];
     }
-    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
     
     [self.tableView reloadData];
 }
