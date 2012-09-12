@@ -18,6 +18,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
 
 @implementation PKParkingDetails
 
+@synthesize mapItem = _mapItem;
 @synthesize location = _location;
 @synthesize notes = _notes;
 @synthesize startTime = _startTime;
@@ -59,6 +60,7 @@ NSString *parkingDetailsAddressStringDidUpdateNotification;
             MKPlacemark *newPlacemark = [[MKPlacemark alloc] initWithCoordinate:_location.coordinate addressDictionary:[[placemarks objectAtIndex:0] addressDictionary]];
             _addressString = [newPlacemark name];
             _placemark = newPlacemark;
+            _mapItem = [[MKMapItem alloc] initWithPlacemark:_placemark];
         }
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         [[NSNotificationCenter defaultCenter] postNotificationName:parkingDetailsAddressStringDidUpdateNotification object:self];

@@ -55,16 +55,27 @@
 
 
 - (IBAction)showWalkingDirections:(id)sender {
-    NSString *mapURL = @"http://maps.google.com/maps?";
-    mapURL = [mapURL stringByAppendingFormat:@"saddr=%f,%f&", 
-              self.mapView.userLocation.location.coordinate.latitude, 
-              self.mapView.userLocation.location.coordinate.longitude];
-    mapURL = [mapURL stringByAppendingFormat:@"daddr=%f,%f&",
-              self.parkingDetails.location.coordinate.latitude,
-              self.parkingDetails.location.coordinate.longitude];
-    mapURL = [mapURL stringByAppendingFormat:@"dirflg=w"];
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];
+    Class itemClass = [self.parkingDetails.mapItem class];
+    if (itemClass && [itemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
+        NSDictionary *launchOptions = @{
+            MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,
+            MKLaunchOptionsMapTypeKey : [NSNumber numberWithInt:MKMapTypeStandard],
+            MKLaunchOptionsShowsTrafficKey : [NSNumber numberWithBool:NO]
+        };
+        
+        [self.parkingDetails.mapItem openInMapsWithLaunchOptions:launchOptions];
+    } else {
+        NSString *mapURL = @"http://maps.google.com/maps?";
+        mapURL = [mapURL stringByAppendingFormat:@"saddr=%f,%f&", 
+                  self.mapView.userLocation.location.coordinate.latitude, 
+                  self.mapView.userLocation.location.coordinate.longitude];
+        mapURL = [mapURL stringByAppendingFormat:@"daddr=%f,%f&",
+                  self.parkingDetails.location.coordinate.latitude,
+                  self.parkingDetails.location.coordinate.longitude];
+        mapURL = [mapURL stringByAppendingFormat:@"dirflg=w"];
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];
+    }
 }
 
 @end

@@ -12,6 +12,7 @@
 
 @interface PKParkingDetails : NSObject <NSCoding>
 
+@property (strong, nonatomic) MKMapItem *mapItem;
 @property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) NSString *notes;
 @property (strong, nonatomic) NSDate *startTime;

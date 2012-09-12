@@ -55,8 +55,6 @@
 		5730044115CD4F2700586C49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5730044015CD4F2700586C49 /* Settings.bundle */; };
 		57C97FC116014626009D27DC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC016014626009D27DC /* Default-568h@2x.png */; };
 		57C97FC316014A6B009D27DC /* no-parking-details-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC216014A6B009D27DC /* no-parking-details-568@2x.png */; };
-		57C97FC516014EA3009D27DC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC416014EA3009D27DC /* Default@2x.png */; };
-		57C97FC716014EAF009D27DC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC616014EAF009D27DC /* Default.png */; };
 		57EE047F15AEE48400F61E09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE047E15AEE48400F61E09 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -368,8 +366,6 @@
 				5730044115CD4F2700586C49 /* Settings.bundle in Resources */,
 				57C97FC116014626009D27DC /* Default-568h@2x.png in Resources */,
 				57C97FC316014A6B009D27DC /* no-parking-details-568@2x.png in Resources */,
-				57C97FC516014EA3009D27DC /* Default@2x.png in Resources */,
-				57C97FC716014EAF009D27DC /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +451,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Parked-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Parked-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -468,7 +464,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Parked-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Parked-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
