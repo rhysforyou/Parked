@@ -18,6 +18,7 @@
 
 @interface PKNewParkViewController ()
 
+@property (strong, nonatomic) CALayer *shadowLayer;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -26,6 +27,7 @@
 
 @synthesize parkingDetails;
 @synthesize mapView;
+@synthesize shadowLayer = _shadowLayer;
 @synthesize locationManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -71,6 +73,8 @@
     shadowLayer.frame           = shadowLayerFrame;
     
     [self.view.layer insertSublayer:shadowLayer below:self.mapView.layer];
+    
+    _shadowLayer = shadowLayer;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,6 +82,10 @@
     if (!self.parkingDetails) {
         self.parkingDetails = [[PKParkingDetails alloc] init];
     }
+    
+    CGRect shadowLayerFrame     = self.mapView.layer.frame;
+    shadowLayerFrame.size.height = self.navigationController.navigationBar.frame.size.height;
+    self.shadowLayer.frame           = shadowLayerFrame;
     
     [self.tableView reloadData];
 }
@@ -108,11 +116,11 @@
     self.parkingDetails.hasDuration = [(UISwitch *)durationToggleCell.accessoryView isOn];
     NSString *archivePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Current.park"];
     [NSKeyedArchiver archiveRootObject:self.parkingDetails toFile:archivePath];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
 - (IBAction)cancel:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:Nil];
 }
 
 - (IBAction)toggleDuration:(UISwitch *)sender {

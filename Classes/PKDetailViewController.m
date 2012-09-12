@@ -77,8 +77,15 @@
 
     [self.view.layer insertSublayer:shadowLayer below:self.mapView.layer];
     
-    self.noDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no-parking-details"]];
-    self.noDataView.frame = CGRectMake(0.0, 0.0, 320.0, 416.0);
+    if ([[UIScreen mainScreen] bounds].size.height > 480) {
+        self.noDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no-parking-details-568"]];
+    } else {
+        self.noDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"no-parking-details"]];
+    }
+         
+    CGRect viewFrame = [[UIScreen mainScreen] bounds];
+    viewFrame.size.height -= 64;
+    self.noDataView.frame = viewFrame;
     self.noDataView.hidden = YES;
     [self.view addSubview:self.noDataView];
 }
@@ -101,11 +108,11 @@
     if ([self.parkingDetails.notes length] > 0) {
         [self.noteTextView setText:self.parkingDetails.notes];
         [self.noteTextView setTextColor:[UIColor blackColor]];
-        [self.noteTextView setTextAlignment:UITextAlignmentLeft];
+        [self.noteTextView setTextAlignment:NSTextAlignmentLeft];
     } else {
         [self.noteTextView setText:@"(no notes)"];
         [self.noteTextView setTextColor:[UIColor lightGrayColor]];
-        [self.noteTextView setTextAlignment:UITextAlignmentCenter];
+        [self.noteTextView setTextAlignment:NSTextAlignmentLeft];
     }
     
     [self setTimerWithInterval:self.parkingDetails.timeInterval];

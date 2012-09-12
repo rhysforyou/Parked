@@ -53,28 +53,7 @@
     [self centerMapOnLocation:mapView.userLocation.location animated:YES];
 }
 
-#ifdef __IPHONE_6_0
-- (IBAction)showWalkingDirections:(id)sender {
-    if ([self.parkingDetails.mapItem respondsToSelector:@selector(openInMapsWithLaunchOptions:)]) {
-        
-        NSDictionary *launchOptions = @{
-        MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking,
-        MKLaunchOptionsMapTypeKey : [NSNumber numberWithInt:MKMapTypeStandard]
-        };
-        [self.parkingDetails.mapItem openInMapsWithLaunchOptions:launchOptions];
-    }
-    NSString *mapURL = @"http://maps.google.com/maps?";
-    mapURL = [mapURL stringByAppendingFormat:@"saddr=%f,%f&", 
-              self.mapView.userLocation.location.coordinate.latitude, 
-              self.mapView.userLocation.location.coordinate.longitude];
-    mapURL = [mapURL stringByAppendingFormat:@"daddr=%f,%f&",
-              self.parkingDetails.location.coordinate.latitude,
-              self.parkingDetails.location.coordinate.longitude];
-    mapURL = [mapURL stringByAppendingFormat:@"dirflg=w"];
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];
-}
-#else
+
 - (IBAction)showWalkingDirections:(id)sender {
     NSString *mapURL = @"http://maps.google.com/maps?";
     mapURL = [mapURL stringByAppendingFormat:@"saddr=%f,%f&", 
@@ -87,6 +66,5 @@
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:mapURL]];
 }
-#endif
 
 @end

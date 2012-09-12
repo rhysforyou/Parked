@@ -53,6 +53,10 @@
 		5730043D15CD4F0D00586C49 /* walking-directions-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5730042115CD4F0D00586C49 /* walking-directions-button@2x.png */; };
 		5730043E15CD4F0D00586C49 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5730042215CD4F0D00586C49 /* MainStoryboard.storyboard */; };
 		5730044115CD4F2700586C49 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5730044015CD4F2700586C49 /* Settings.bundle */; };
+		57C97FC116014626009D27DC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC016014626009D27DC /* Default-568h@2x.png */; };
+		57C97FC316014A6B009D27DC /* no-parking-details-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC216014A6B009D27DC /* no-parking-details-568@2x.png */; };
+		57C97FC516014EA3009D27DC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC416014EA3009D27DC /* Default@2x.png */; };
+		57C97FC716014EAF009D27DC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C97FC616014EAF009D27DC /* Default.png */; };
 		57EE047F15AEE48400F61E09 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE047E15AEE48400F61E09 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +124,10 @@
 		5730042215CD4F0D00586C49 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		5730042315CD4F0D00586C49 /* Parked-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Parked-Info.plist"; sourceTree = "<group>"; };
 		5730044015CD4F2700586C49 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		57C97FC016014626009D27DC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		57C97FC216014A6B009D27DC /* no-parking-details-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-parking-details-568@2x.png"; sourceTree = "<group>"; };
+		57C97FC416014EA3009D27DC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		57C97FC616014EAF009D27DC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		57EE047E15AEE48400F61E09 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -143,6 +151,9 @@
 		571381B51573745700CA5555 = {
 			isa = PBXGroup;
 			children = (
+				57C97FC616014EAF009D27DC /* Default.png */,
+				57C97FC416014EA3009D27DC /* Default@2x.png */,
+				57C97FC016014626009D27DC /* Default-568h@2x.png */,
 				571381CA1573745800CA5555 /* Parked */,
 				571381C31573745800CA5555 /* Frameworks */,
 				571381C11573745800CA5555 /* Products */,
@@ -260,6 +271,7 @@
 				5730041515CD4F0D00586C49 /* map-pin@2x.png */,
 				5730041615CD4F0D00586C49 /* no-parking-details.png */,
 				5730041715CD4F0D00586C49 /* no-parking-details@2x.png */,
+				57C97FC216014A6B009D27DC /* no-parking-details-568@2x.png */,
 				5730041815CD4F0D00586C49 /* note-sheet.png */,
 				5730041915CD4F0D00586C49 /* note-sheet@2x.png */,
 				5730041A15CD4F0D00586C49 /* pin.png */,
@@ -354,6 +366,10 @@
 				5730043D15CD4F0D00586C49 /* walking-directions-button@2x.png in Resources */,
 				5730043E15CD4F0D00586C49 /* MainStoryboard.storyboard in Resources */,
 				5730044115CD4F2700586C49 /* Settings.bundle in Resources */,
+				57C97FC116014626009D27DC /* Default-568h@2x.png in Resources */,
+				57C97FC316014A6B009D27DC /* no-parking-details-568@2x.png in Resources */,
+				57C97FC516014EA3009D27DC /* Default@2x.png in Resources */,
+				57C97FC716014EAF009D27DC /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +455,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Parked-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Parked-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -452,7 +468,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Parked-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Resources/Parked-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
